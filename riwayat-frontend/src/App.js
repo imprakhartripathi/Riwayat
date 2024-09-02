@@ -24,7 +24,7 @@ function App() {
 
   return(
     <div className="container">
-       <h2>Welcome to The Riwayat Dashboard!</h2>
+       <h2>Welcome to The Riwayat Dashboard Page!</h2>
     </div>
 );
 }
