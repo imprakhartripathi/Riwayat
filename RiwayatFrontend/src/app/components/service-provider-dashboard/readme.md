@@ -1,1 +1,0 @@
-### Service Provider's Dashboard, here the vendors can list their services and manage their orders

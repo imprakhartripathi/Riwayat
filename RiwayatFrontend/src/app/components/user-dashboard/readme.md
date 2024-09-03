@@ -1,1 +1,0 @@
-### Users Dashboard, here they browse the facilities
