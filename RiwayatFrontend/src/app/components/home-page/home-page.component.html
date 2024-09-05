@@ -1,14 +1,40 @@
-<mat-toolbar class="toolbar">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>Riwayat</span>
-    <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>share</mat-icon>
-    </button>
-  </mat-toolbar>
-  
+<div class="main-container">
+  <div class="top-section">
+    <mat-card class="welcome-card">
+      <mat-card-content>
+        <div class="top-content">
+          <div class="logo-container">
+            <img src="../../../assets/Riwayat.png" alt="Riwayat Logo" class="logo" />
+          </div>
+          <div class="welcome-text">
+            <h1>Welcome to Riwayat!</h1>
+            <p>Celebrating Moments, Honoring Traditions</p>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="features-section">
+    <mat-grid-list cols="3" rowHeight="150px" gutterSize="16px">
+      <mat-grid-tile *ngFor="let feature of features" class="feature-card">
+        <mat-card>
+          <mat-card-title>{{ feature.title }}</mat-card-title>
+          <mat-card-content>{{ feature.description }}</mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+  <div class="login-section">
+    <mat-card class="login-card" (click)="navigateTo('user')">
+      <mat-card-title>User Login</mat-card-title>
+    </mat-card>
+    <mat-card class="login-card" (click)="navigateTo('serviceprov')">
+      <mat-card-title>Service Provider Login</mat-card-title>
+    </mat-card>
+    <mat-card class="login-card" (click)="navigateTo('admin')">
+      <mat-card-title>Admin Login</mat-card-title>
+    </mat-card>
+  </div>
+</div>
