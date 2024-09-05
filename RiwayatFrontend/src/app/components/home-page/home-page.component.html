@@ -10,6 +10,9 @@
             <h1>Welcome to Riwayat!</h1>
             <p>Celebrating Moments, Honoring Traditions</p>
           </div>
+          <div class="button-containner">
+            <button class="login-btn" title="Login or Sign Up" (click)="openLoginDialog()"><mat-icon class="login-icon">perm_identity</mat-icon></button>
+          </div>
         </div>
       </mat-card-content>
     </mat-card>
@@ -24,17 +27,5 @@
         </mat-card>
       </mat-grid-tile>
     </mat-grid-list>
-  </div>
-
-  <div class="login-section">
-    <mat-card class="login-card" (click)="navigateTo('user')">
-      <mat-card-title>User Login</mat-card-title>
-    </mat-card>
-    <mat-card class="login-card" (click)="navigateTo('serviceprov')">
-      <mat-card-title>Service Provider Login</mat-card-title>
-    </mat-card>
-    <mat-card class="login-card" (click)="navigateTo('admin')">
-      <mat-card-title>Admin Login</mat-card-title>
-    </mat-card>
   </div>
 </div>

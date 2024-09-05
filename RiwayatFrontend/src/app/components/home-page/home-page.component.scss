@@ -15,7 +15,7 @@ $primary-color: #cea660; // Gold color for accents
 }
 
 .welcome-card {
-  background-color: #313131;
+  background: linear-gradient(to right, black, black, #cea660);
   color: $primary-color;
   width: 100%; // Adjust as needed
   border-radius: 8px;
@@ -64,6 +64,17 @@ $primary-color: #cea660; // Gold color for accents
     justify-content: center;
     align-items: center;
     text-align: center;
+    transition: 0.5s;
+
+    &:hover {
+      background: radial-gradient(circle, white, white, white, #cea660);
+      transition: 0.5s;
+
+      mat-card-content {
+        color: #313131;
+      }
+
+    }
 
     mat-card {
       background-color: transparent;
@@ -71,8 +82,8 @@ $primary-color: #cea660; // Gold color for accents
     }
 
     mat-card-title {
-      font-size: 1.2rem;
-      font-weight: bold;
+      font-size: 1.5rem;
+      font-weight: normal;
       color: $primary-color;
     }
 
@@ -83,7 +94,7 @@ $primary-color: #cea660; // Gold color for accents
   }
 }
 
-.login-section {
+/*.login-section {
   display: flex;
   justify-content: space-around;
   width: 100%;
@@ -103,4 +114,37 @@ $primary-color: #cea660; // Gold color for accents
       transform: translateY(-5px);
     }
   }
+}*/
+
+.login-btn {
+  background-color: black;
+  color: $primary-color;
+  border: 0px;
+  border-radius: 50%;
+  height: 55px;
+  width: 55px;
+  margin-right: 20px;
+
+  &:hover {
+    background-color: #313131;
+    color: #ffffff;
+    transition: 0.3s;
+  }
+
+  &:active {
+    background-color: black;
+    color: #ffffff;
+    transition: 0.3s;
+  }
+
+}
+
+.login-icon {
+  transform: scale(1.75);
+ 
+}
+
+.custom-dialog-container {
+  border-radius: 15px; /* Adjust the radius as needed */
+  overflow: hidden; /* Ensure the content does not overflow the rounded corners */
 }

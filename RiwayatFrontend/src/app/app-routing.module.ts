@@ -5,12 +5,14 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { ServiceProviderDashboardComponent } from './components/service-provider-dashboard/service-provider-dashboard.component';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
+import { AuthenticatorComponent } from './authenticator/authenticator.component';
 
 const routes: Routes = [
-  { path: '', component: HomePageComponent },
-  { path: 'admin', component: AdminDashboardComponent },
-  { path: 'serviceprov', component: ServiceProviderDashboardComponent },
-  { path: 'user', component: UserDashboardComponent }
+  { path: '', component: AuthenticatorComponent, data: { title: 'Riwayat - Authenticator' } },
+  { path: 'admin', component: AdminDashboardComponent, data: { title: 'Riwayat - Admin Dashboard' } },
+  { path: 'serviceprov', component: ServiceProviderDashboardComponent, data: { title: 'Riwayat - Service Provider Dashboard' } },
+  { path: 'user', component: UserDashboardComponent, data: { title: 'Riwayat - User Dashboard' } },
+  { path: 'showcase', component: HomePageComponent, data: { title: 'Riwayat - Showcase' } }
 ];
 
 @NgModule({

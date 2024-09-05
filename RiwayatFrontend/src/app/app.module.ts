@@ -10,6 +10,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {provideNativeDateAdapter} from '@angular/material/core';
 import {MatCardModule} from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +21,7 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { ServiceProviderDashboardComponent } from './components/service-provider-dashboard/service-provider-dashboard.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { AuthenticatorComponent } from './authenticator/authenticator.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     HomePageComponent,
     AdminDashboardComponent,
     UserDashboardComponent,
-    ServiceProviderDashboardComponent
+    ServiceProviderDashboardComponent,
+    AuthenticatorComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +42,10 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     MatInputModule,
     MatFormFieldModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    FormsModule
   ],
   providers: [
     provideAnimationsAsync(),

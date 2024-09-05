@@ -1,0 +1,113 @@
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+  }
+  
+  .auth-dialog {
+    display: flex;
+    background-color: white;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 1000px;
+    height: 500px;
+  }
+  
+  .auth-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    background-color: black;
+  }
+  
+  .auth-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    background-color: white;
+  }
+  
+  .auth-left {
+    width: 50%;
+    text-align: center;
+    border-right: 1px solid #e0e0e0;
+  }
+  
+  .logo {
+    max-width: 150px;
+    margin-bottom: 20px;
+    margin-left: 136px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    color: #cea660;
+  }
+  
+  .switch-btn {
+    margin-top: 20px;
+    background-color: #cea660;
+    color: white;
+  }
+  
+  .auth-right {
+    width: 50%;
+  }
+
+  .showcase-btn {
+    margin-top: 20px;
+    background-color: #cea660;
+    color: white;
+    width: 100%;
+  }
+  
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 40px;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  
+    .mat-form-field-flex {
+      background-color: white; /* White infill */
+      border: 1px solid black; /* Black border */
+      border-radius: 4px;
+    }
+  
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+      color: black;
+    }
+  
+    .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+      color: black;
+    }
+  
+    .mat-form-field-appearance-outline .mat-form-field-outline-end, 
+    .mat-form-field-appearance-outline .mat-form-field-outline-start {
+      border-color: black; /* Ensuring the outline is black */
+    }
+  }
+  
+  .mat-input-element {
+    background-color: white; /* White background */
+    color: black; /* Black text color */
+  }
+  
+  button[type="submit"] {
+    width: 100%;
+    height: 45px;
+    background-color: black;
+    color: #cea660;
+    font-size: 16px;
+  }
+  
