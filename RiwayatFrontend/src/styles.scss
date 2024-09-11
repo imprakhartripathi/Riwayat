@@ -8,3 +8,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     overflow: hidden; /* Ensure the content does not overflow the rounded corners */
   }
   
+  .mat-badge-content {
+    background: white;
+    color: black;
+}
+
+.my-custom-badge-accent.mat-badge-accent .mat-badge-content {
+  background-color: white;
+  color: black;
+}

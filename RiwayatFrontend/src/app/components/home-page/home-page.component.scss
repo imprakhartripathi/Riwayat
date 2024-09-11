@@ -64,17 +64,16 @@ $primary-color: #cea660; // Gold color for accents
     justify-content: center;
     align-items: center;
     text-align: center;
-    transition: 0.5s;
 
-    &:hover {
-      background: radial-gradient(circle, white, white, white, #cea660);
-      transition: 0.5s;
+    // &:hover {
+    //   background: radial-gradient(circle, white, white, white, #cea660);
+    //   transition: 0.3s;
 
-      mat-card-content {
-        color: #313131;
-      }
+    //   mat-card-content {
+    //     color: #313131;
+    //   }
 
-    }
+    // }
 
     mat-card {
       background-color: transparent;
@@ -147,4 +146,18 @@ $primary-color: #cea660; // Gold color for accents
 .custom-dialog-container {
   border-radius: 15px; /* Adjust the radius as needed */
   overflow: hidden; /* Ensure the content does not overflow the rounded corners */
+}
+
+.footer{
+  width: 100%;
+  height: 50px;
+  margin-bottom: -60px;
+  border-radius: 8px;
+  background: linear-gradient(to top, #cea660, white);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  color: #313131;
 }

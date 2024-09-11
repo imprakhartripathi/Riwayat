@@ -1,0 +1,104 @@
+/* user-dashboard.component.scss */
+mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  
+  .logo img {
+    height: 80px;
+    margin-top: 8px;
+  }
+  
+  .spacer {
+    flex: 1;
+  }
+  
+  .navbar-icons button {
+    margin-right: 10px;
+    color: #d6a553;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .icon-bar {
+    display: none;
+    @media (max-width: 768px) {
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+    
+  }
+  
+  .navbar-icons-responsive {
+    display: none;
+    @media (max-width:768px) {
+      display: flex;
+      justify-content: space-around;
+      width: 100%; 
+    }
+  }
+  
+  .navbar-icons-responsive button {
+    margin-right: 10px;
+    color: #d6a553;
+  }
+  
+  
+  .profile-pic {
+    border: 2px solid #d6a553;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin-top: -10px;
+  }
+  
+  .section {
+    margin: 20px;
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .section-responsive {
+    display: none;
+    @media (max-width: 768px) {
+      display: block;
+      margin: 20px;
+    }
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  mat-grid-list {
+    width: 100%;
+  }
+  
+  .category-card, .offer-card, .order-card {
+    width: 450px;
+    height: 200px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  mat-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .service {
+    margin: 5px 0;
+  }
+  
+
+  

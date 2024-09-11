@@ -12,6 +12,11 @@ import {MatCardModule} from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatAccordion, MatExpansionModule, MatExpansionPanel} from '@angular/material/expansion';
+
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -45,7 +50,12 @@ import { AuthenticatorComponent } from './authenticator/authenticator.component'
     MatGridListModule,
     MatDatepickerModule,
     MatDialogModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    MatBadgeModule,
+    MatAccordion,
+    MatExpansionPanel,
+    MatExpansionModule
   ],
   providers: [
     provideAnimationsAsync(),

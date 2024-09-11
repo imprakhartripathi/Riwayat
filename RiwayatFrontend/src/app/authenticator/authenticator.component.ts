@@ -1,6 +1,7 @@
 import { Component, Optional } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-authenticator',
@@ -8,13 +9,18 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./authenticator.component.scss']
 })
 export class AuthenticatorComponent {
-  username: string = '';
-  password: string = '';
-  confirmPassword: string = '';  // For signup
-  isLogin: boolean = true;  // To toggle between login and signup
+  isLogin: boolean = true;
+  authForm: FormGroup;
 
-  // Change private to public so it can be accessed in the template
-  constructor(private router: Router, @Optional() public dialogRef: MatDialogRef<AuthenticatorComponent>) {}
+  constructor(private router: Router, @Optional() public dialogRef: MatDialogRef<AuthenticatorComponent>, private fb: FormBuilder) {
+    this.authForm = this.fb.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required],
+      name: [''],
+      phone: [''],
+      newPassword: ['']
+    });
+  }
 
   toggleAuth() {
     this.isLogin = !this.isLogin;
@@ -22,33 +28,38 @@ export class AuthenticatorComponent {
 
   onSubmit() {
     if (this.isLogin) {
-      // Login logic
-      if (this.username === 'admin' && this.password === 'admin') {
-        this.router.navigate(['/admin']);
-      } else if (this.username === 'user' && this.password === 'user') {
-        this.router.navigate(['/user']);
-      } else if (this.username === 'serviceprov' && this.password === 'serviceprov') {
-        this.router.navigate(['/serviceprov']);
+      if (this.authForm.valid) {
+        const { username, password } = this.authForm.value;
+        // Login logic
+        if (username === 'admin' && password === 'admin') {
+          this.router.navigate(['/admin']);
+        } else if (username === 'user' && password === 'user') {
+          this.router.navigate(['/user']);
+        } else if (username === 'serviceprov' && password === 'serviceprov') {
+          this.router.navigate(['/serviceprov']);
+        } else {
+          alert('Invalid credentials');
+        }
       } else {
-        alert('Invalid credentials');
+        alert('Please fill out all fields correctly');
       }
     } else {
-      // Sign up logic (you can add validation like password match, etc.)
-      if (this.password !== this.confirmPassword) {
-        alert('Passwords do not match');
-      } else {
+      // Sign-up logic
+      if (this.authForm.valid) {
         alert('Account created successfully');
-        // Handle account creation here
+        console.log(this.authForm.value);
+        // Additional account creation handling
+      } else {
+        alert('Please fill out all fields correctly');
       }
     }
 
-    // Close the dialog only if it's opened in a dialog
+    // Close the dialog if opened in a dialog
     if (this.dialogRef) {
       this.dialogRef.close();
     }
   }
 
-  // Method to navigate to the showcase route
   goToShowcase() {
     this.router.navigate(['/showcase']);
   }
