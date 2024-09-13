@@ -1,0 +1,37 @@
+.notification-container {
+    margin: 30px;
+    background-color: white;
+    border-radius: 8px;
+  }
+  
+  .notification-container h2 {
+    color: black;
+  }
+  
+  .no-notifications {
+    color: black;
+    font-style: italic;
+  }
+  
+  mat-expansion-panel {
+    margin-bottom: 10px;
+  }
+  
+  mat-panel-title {
+    color: black;
+  }
+  
+  mat-expansion-panel-header {
+    background-color: white;
+  }
+  
+  mat-expansion-panel {
+    box-shadow: black;
+    border: 0.5px solid black;
+    border-radius: 4px;
+  }
+  
+  mat-expansion-panel:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+  

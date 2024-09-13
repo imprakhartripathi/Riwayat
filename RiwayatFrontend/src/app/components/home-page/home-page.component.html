@@ -17,9 +17,18 @@
       </mat-card-content>
     </mat-card>
   </div>
-
   <div class="features-section">
     <mat-grid-list cols="3" rowHeight="150px" gutterSize="16px">
+      <mat-grid-tile *ngFor="let feature of features" class="feature-card">
+        <mat-card>
+          <mat-card-title>{{ feature.title }}</mat-card-title>
+          <mat-card-content>{{ feature.description }}</mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <div class="features-section-responsive">
+    <mat-grid-list cols="1" rowHeight="150px" gutterSize="16px">
       <mat-grid-tile *ngFor="let feature of features" class="feature-card">
         <mat-card>
           <mat-card-title>{{ feature.title }}</mat-card-title>

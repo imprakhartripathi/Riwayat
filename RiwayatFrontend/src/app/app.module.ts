@@ -27,6 +27,12 @@ import { UserDashboardComponent } from './components/user-dashboard/user-dashboa
 import { ServiceProviderDashboardComponent } from './components/service-provider-dashboard/service-provider-dashboard.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AuthenticatorComponent } from './authenticator/authenticator.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { UserSettingsComponent } from './components/user-settings/user-settings.component';
+import { UserFavoriteComponent } from './components/user-favorite/user-favorite.component';
+import { UserOrdersComponent } from './components/user-orders/user-orders.component';
+import { UserCartComponent } from './components/user-cart/user-cart.component';
+import { UserNotificationComponent } from './components/user-notification/user-notification.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +41,13 @@ import { AuthenticatorComponent } from './authenticator/authenticator.component'
     AdminDashboardComponent,
     UserDashboardComponent,
     ServiceProviderDashboardComponent,
-    AuthenticatorComponent
+    AuthenticatorComponent,
+    UserProfileComponent,
+    UserSettingsComponent,
+    UserFavoriteComponent,
+    UserOrdersComponent,
+    UserCartComponent,
+    UserNotificationComponent
   ],
   imports: [
     BrowserModule,

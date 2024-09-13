@@ -20,6 +20,11 @@ $primary-color: #cea660; // Gold color for accents
   width: 100%; // Adjust as needed
   border-radius: 8px;
   padding: 1.5rem;
+
+  @media (max-width: 768px) {
+    background: linear-gradient(to bottom, black, black,#cea660);
+  }
+
 }
 
 .top-content {
@@ -38,12 +43,24 @@ $primary-color: #cea660; // Gold color for accents
 .logo {
   max-width: 150px; // Adjust as needed
   height: auto;
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .welcome-text {
   flex: 1; // Allows text to take the remaining space
   text-align: left;
   font-size: 30px;
+
+  @media (max-width: 768px) {
+    text-align: center;
+    font-size: 16px;
+
+    & h1 {
+      font-size: 20px;
+    }
+  }
 
   & h1 {
     font-size: 35px;
@@ -91,7 +108,59 @@ $primary-color: #cea660; // Gold color for accents
       color: #313131;
     }
   }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
+
+.features-section-responsive {
+  width: 100%;
+  margin-bottom: 2rem;
+  .feature-card {
+    background-color: #ffffff;
+    color: #313131;
+    border: 1px solid #dddddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    // &:hover {
+    //   background: radial-gradient(circle, white, white, white, #cea660);
+    //   transition: 0.3s;
+
+    //   mat-card-content {
+    //     color: #313131;
+    //   }
+
+    // }
+
+    mat-card {
+      background-color: transparent;
+      box-shadow: none;
+    }
+
+    mat-card-title {
+      font-size: 1.5rem;
+      font-weight: normal;
+      color: $primary-color;
+    }
+
+    mat-card-content {
+      font-size: 1rem;
+      color: #313131;
+    }
+  }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+
 
 /*.login-section {
   display: flex;
@@ -136,6 +205,10 @@ $primary-color: #cea660; // Gold color for accents
     transition: 0.3s;
   }
 
+  @media (max-width: 768px) {
+    display: none;
+  }
+
 }
 
 .login-icon {
@@ -158,6 +231,7 @@ $primary-color: #cea660; // Gold color for accents
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  text-align: center;
   margin-top: 20px;
   color: #313131;
 }
