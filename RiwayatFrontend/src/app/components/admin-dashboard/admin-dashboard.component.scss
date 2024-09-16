@@ -1,0 +1,56 @@
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.logo img {
+  height: 80px;
+  margin-top: 8px;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.navbar-icons button {
+  margin-right: 10px;
+  color: #d6a553;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.icon-bar {
+  display: none;
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+  }
+  
+}
+
+.navbar-icons-responsive {
+  display: none;
+  @media (max-width:768px) {
+    display: flex;
+    justify-content: space-around;
+    width: 100%; 
+  }
+}
+
+.navbar-icons-responsive button {
+  margin-right: 10px;
+  color: #d6a553;
+}
+
+
+.profile-pic {
+  border: 2px solid #d6a553;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  margin-top: -10px;
+}

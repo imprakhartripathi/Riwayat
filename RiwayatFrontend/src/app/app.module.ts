@@ -15,8 +15,8 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatAccordion, MatExpansionModule, MatExpansionPanel} from '@angular/material/expansion';
-
-
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -33,6 +33,8 @@ import { UserFavoriteComponent } from './components/user-favorite/user-favorite.
 import { UserOrdersComponent } from './components/user-orders/user-orders.component';
 import { UserCartComponent } from './components/user-cart/user-cart.component';
 import { UserNotificationComponent } from './components/user-notification/user-notification.component';
+import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
+import { AdminToolsComponent } from './components/admin-tools/admin-tools.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { UserNotificationComponent } from './components/user-notification/user-n
     UserFavoriteComponent,
     UserOrdersComponent,
     UserCartComponent,
-    UserNotificationComponent
+    UserNotificationComponent,
+    AdminProfileComponent,
+    AdminToolsComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +71,9 @@ import { UserNotificationComponent } from './components/user-notification/user-n
     MatBadgeModule,
     MatAccordion,
     MatExpansionPanel,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [
     provideAnimationsAsync(),

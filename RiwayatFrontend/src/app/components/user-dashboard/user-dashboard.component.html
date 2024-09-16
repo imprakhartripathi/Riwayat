@@ -28,19 +28,19 @@
 
   <div class="icon-bar">
     <div class="navbar-icons-responsive">
-      <button mat-icon-button>
+      <button mat-icon-button (click)="openNotificationDialog()">
         <mat-icon matBadge="{{notificationBadge}}" matBadgeColor="warn" matBadgeSize="small">notifications</mat-icon>
       </button>
-      <button mat-icon-button>
+      <button mat-icon-button (click)="openCartDialog()">
         <mat-icon matBadge="{{cartBadge}}" matBadgeColor="warn" matBadgeSize="small">shopping_cart</mat-icon>
       </button>
-      <button mat-icon-button>
-        <mat-icon>receipt</mat-icon>
+      <button mat-icon-button (click)="openOrdersDialog()">
+        <mat-icon >receipt</mat-icon>
       </button>
-      <button mat-icon-button>
+      <button mat-icon-button (click)="openFavoriteDialog()">
         <mat-icon>favorite</mat-icon>
       </button>
-      <button mat-icon-button>
+      <button mat-icon-button (click)="openSettingsDialog()">
         <mat-icon>settings</mat-icon>
       </button>
     </div>
