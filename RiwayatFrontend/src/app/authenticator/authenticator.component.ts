@@ -11,14 +11,19 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AuthenticatorComponent {
   isLogin: boolean = true;
   authForm: FormGroup;
+  newAuthForm: FormGroup;
+  superUser: string = 'Welcome, Big Daddy Boss';
 
   constructor(private router: Router, @Optional() public dialogRef: MatDialogRef<AuthenticatorComponent>, private fb: FormBuilder) {
     this.authForm = this.fb.group({
       username: ['', Validators.required],
-      password: ['', Validators.required],
-      name: [''],
-      phone: [''],
-      newPassword: ['']
+      password: ['', Validators.required]
+    });
+
+    this.newAuthForm = this.fb.group({
+      name: ['', Validators.required],
+      phone: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
+      newPassword: ['', Validators.required]
     });
   }
 
@@ -33,6 +38,7 @@ export class AuthenticatorComponent {
         // Login logic
         if (username === 'admin' && password === 'admin') {
           this.router.navigate(['/admin']);
+          alert(this.superUser)
         } else if (username === 'user' && password === 'user') {
           this.router.navigate(['/user']);
         } else if (username === 'serviceprov' && password === 'serviceprov') {
@@ -45,9 +51,9 @@ export class AuthenticatorComponent {
       }
     } else {
       // Sign-up logic
-      if (this.authForm.valid) {
+      if (this.newAuthForm.valid) {
         alert('Account created successfully');
-        console.log(this.authForm.value);
+        console.log(this.newAuthForm.value);
         // Additional account creation handling
       } else {
         alert('Please fill out all fields correctly');

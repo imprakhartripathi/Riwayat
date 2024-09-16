@@ -6,6 +6,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .custom-dialog-container {
     border-radius: 15px; /* Adjust the radius as needed */
     overflow: hidden; /* Ensure the content does not overflow the rounded corners */
+    width: 1000px;
+    height: 500px;
+
+    @media (max-width: 768px) {
+      width: 90%;
+      height: auto;
+    }
   }
   
   .mat-badge-content {

@@ -22,7 +22,8 @@
           <mat-label>Password</mat-label>
           <input matInput type="password" placeholder="Enter your password" formControlName="password" required />
         </mat-form-field>
-        
+      </form>
+      <form [formGroup]="newAuthForm" (ngSubmit)="onSubmit()">
         <!-- Sign Up Fields -->
         <mat-form-field *ngIf="!isLogin" appearance="outline">
           <mat-label>Full Name</mat-label>
