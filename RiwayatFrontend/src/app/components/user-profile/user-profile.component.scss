@@ -9,6 +9,11 @@ mat-toolbar {
     margin-top: 8px;
   }
   
+.home-btn{ 
+  margin-left: -8px;
+  margin-top: 2px;
+}
+
   .spacer {
     flex: 1;
   }
@@ -72,7 +77,7 @@ mat-toolbar {
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid #bb3676;
+    border: 2px solid #d6a553;
   }
   
   .profile-actions {
@@ -87,7 +92,7 @@ mat-toolbar {
   
   .profile-details h2 {
     margin: 0;
-    color: #bb3676;
+    color: #d6a553;
   }
   
   .profile-details p {
@@ -101,13 +106,13 @@ mat-toolbar {
   
   .profile-info p strong {
     margin-right: 5px;
-    color: #bb3676;
+    color: #d6a553;
   }
   
   .profile-info input, .profile-info textarea {
     margin-left: 5px;
     border: none;
-    border-bottom: 1px solid #bb3676;
+    border-bottom: 1px solid #d6a553;
     background: none;
     color: #333;
   }

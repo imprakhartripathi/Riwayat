@@ -22,10 +22,16 @@ export class UserProfileComponent implements OnInit {
   editedProfileData: any;
   constructor(private router: Router, public dialog: MatDialog) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loadProfile();
+  }
 
   goToUserProfile() {
     this.router.navigate(['/userprofile']);
+  }
+
+  goToUserHome() {
+    this.router.navigate(['/user']);
   }
 
   openNotificationDialog() {
@@ -76,12 +82,10 @@ export class UserProfileComponent implements OnInit {
   loadProfile() {
     // Fetch profile data and populate the form
     this.profileData = {
-      name: 'Dr. John Doe',
-      email: 'john.doe@example.com',
-      phone: '123-456-7890',
-      specialty: 'Cardiologist',
-      experience: '10 years',
-      bio: 'Experienced cardiologist with a demonstrated history of working in the hospital & health care industry.'
+      name: 'Prakhar Tripathi',
+      email: 'imprakhartripathiofficial@gmail.com',
+      phone: '+91 8707406448',
+      userID: '4269'
     };
     this.editedProfileData = { ...this.profileData };
     this.profileImage = 'assets/profile-image.jpg'; // Placeholder image

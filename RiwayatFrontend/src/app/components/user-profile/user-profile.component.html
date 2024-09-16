@@ -1,6 +1,8 @@
 <mat-toolbar style="color: white; background-color: black;">
 <div class="logo">
+  <button mat-button (click)="goToUserHome()" class="home-btn">
     <img src="../../../assets/riwayat-text-logo.png" alt="Riwayat" />
+  </button>
 </div>
 <div class="spacer"></div>
 <div class="navbar-icons">
@@ -43,6 +45,39 @@
         <mat-icon>settings</mat-icon>
       </button>
     </div>
+</div>
+
+<div class="profile-container">
+  <div class="profile-header">
+    <img src="../../../assets/user.png" alt="Profile Image" class="profile-image">
+    <div class="profile-actions">
+      <button mat-icon-button (click)="onEdit()" *ngIf="!isEditing">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button (click)="onSave()" *ngIf="isEditing">
+        <mat-icon>save</mat-icon>
+      </button>
+      <button mat-icon-button (click)="onCancel()" *ngIf="isEditing">
+        <mat-icon>cancel</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="profile-details">
+    <h2>{{ profileData.name }}</h2>
+    <p *ngIf="!isEditing">{{ profileData.userID }}</p>
+    <textarea *ngIf="isEditing" [(ngModel)]="editedProfileData.bio"></textarea>
+    <div class="profile-info">
+      <p><strong>Email:</strong> <span *ngIf="!isEditing">{{ profileData.email }}</span></p>
+      <input *ngIf="isEditing" [(ngModel)]="editedProfileData.email">
+      
+      <p><strong>Phone:</strong> <span *ngIf="!isEditing">{{ profileData.phone }}</span></p>
+      <input *ngIf="isEditing" [(ngModel)]="editedProfileData.phone">
+    </div>
+    <div *ngIf="isEditing" class="file-input">
+      <label for="file">Change Profile Image:</label>
+      <input type="file" id="file" (change)="onFileSelected($event)">
+    </div>
+  </div>
 </div>
 
 
