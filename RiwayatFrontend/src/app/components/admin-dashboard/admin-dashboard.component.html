@@ -4,13 +4,13 @@
   </div>
   <div class="spacer"></div>
   <div class="navbar-icons">
-    <button mat-icon-button>
+    <button mat-icon-button (click)="openNotificationsDialog()">
       <mat-icon matBadge="{{notificationBadge}}" matBadgeColor="warn" matBadgeSize="small">notifications</mat-icon>
     </button>
-    <button mat-icon-button>
-      <mat-icon>build</mat-icon>
+    <button mat-icon-button (click)="openAddEventDialog()">
+      <mat-icon>add_box</mat-icon>
     </button>
-    <button mat-icon-button>
+    <button mat-icon-button (click)="openSettingsDialog()">
       <mat-icon>settings</mat-icon>
     </button>
   </div>
@@ -21,13 +21,13 @@
 
 <div class="icon-bar">
   <div class="navbar-icons-responsive">
-    <button mat-icon-button>
+    <button mat-icon-button (click)="openNotificationsDialog()">
       <mat-icon matBadge="{{notificationBadge}}" matBadgeColor="warn" matBadgeSize="small">notifications</mat-icon>
     </button>
-    <button mat-icon-button>
-      <mat-icon>build</mat-icon>
+    <button mat-icon-button (click)="openAddEventDialog()">
+      <mat-icon>add_box</mat-icon>
     </button>
-    <button mat-icon-button>
+    <button mat-icon-button (click)="openSettingsDialog()">
       <mat-icon>settings</mat-icon>
     </button>
   </div>

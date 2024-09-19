@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Required for Material Animations
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -17,6 +17,9 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatAccordion, MatExpansionModule, MatExpansionPanel} from '@angular/material/expansion';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatNativeDateModule } from '@angular/material/core'; // Datepicker Adapter
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -34,7 +37,7 @@ import { UserOrdersComponent } from './components/user-orders/user-orders.compon
 import { UserCartComponent } from './components/user-cart/user-cart.component';
 import { UserNotificationComponent } from './components/user-notification/user-notification.component';
 import { AdminProfileComponent } from './components/admin-profile/admin-profile.component';
-import { AdminToolsComponent } from './components/admin-tools/admin-tools.component';
+import { AdminEventCreatorComponent } from './components/admin-event-creator/admin-event-creator.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +54,7 @@ import { AdminToolsComponent } from './components/admin-tools/admin-tools.compon
     UserCartComponent,
     UserNotificationComponent,
     AdminProfileComponent,
-    AdminToolsComponent
+    AdminEventCreatorComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +76,11 @@ import { AdminToolsComponent } from './components/admin-tools/admin-tools.compon
     MatExpansionPanel,
     MatExpansionModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    BrowserAnimationsModule,
+    MatChipsModule,
+    MatNativeDateModule,
+    MatButtonToggleModule
   ],
   providers: [
     provideAnimationsAsync(),
