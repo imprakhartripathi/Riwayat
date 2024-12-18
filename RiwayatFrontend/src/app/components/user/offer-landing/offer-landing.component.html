@@ -1,0 +1,31 @@
+<app-user-navbar></app-user-navbar>
+<div class="search-results-container">
+  <h3>Offers On "{{ searchTerm }}".</h3>
+
+  <div *ngIf="searchResults.length > 0; else noResults">
+    <div *ngFor="let result of searchResults" class="result-card">
+      <mat-card class="result-card-content" (click)="goToProfile(result)">
+        <div class="img-c">
+          <img class="vendor-img" mat-card-image [src]="result.image" alt="{{ result.name }} Image">
+        </div>
+        <div class="result-det">
+          <h3>{{ result.name }}</h3>
+          <div *ngIf="result.type === 'vendor'">
+            <p>{{ result.description }}</p>
+            <p>Category: {{ result.category }}</p>
+            <p>
+              Rating: 
+              <mat-icon *ngFor="let star of getStars(result.rating)">star</mat-icon>
+              ({{ result.rating }} / 5)
+            </p>
+            <p>{{ result.peopleServed }} people served</p>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+
+  <ng-template #noResults>
+    <p>No results found for "{{ searchTerm }}".</p>
+  </ng-template>
+</div>

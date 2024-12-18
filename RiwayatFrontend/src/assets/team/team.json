@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Prakhar Tripathi",
+        "role": "Developer",
+        "password": "imprakhar",
+        "username": "imprakhartripathi",
+        "email": "imprakhartripathiofficial@gmail.com",
+        "image": "assets/team/prakhar.png",
+        "addressHome": "159, Ground Floor, Radha City, Mathura",
+        "addressOffice": "GLA University, Mathura",
+        "phone": "8707406448",
+        "favVendors": [
+            {"name": "Elegant Decorations"},
+            {"name": "Venue Royale"}
+        ],
+        "notifications": [
+            {"title": "Welcome to Riwayat Prakhar!", "content": "Hello Prakhar, We Welcome you to Riwayat and We hope that you enjoy the user experience!"},
+            {"title": "User Details Added...", "content": "Hi Prakhar, your details have been updated please check the user profile to confirm, Thanks!"}
+        ]
+        
+    },
+    {
+        "name": "Krishna Bansal",
+        "role": "Developer",
+        "password": "123",
+        "username": "imkrishnabansal",
+        "email": "lalibansa454@gmail.com",
+        "image": "assets/team/krishna.png",
+        "addressHome": "Krishna Valley, GLA University, Mathura",
+        "addressOffice": "GLA University, Mathura",
+        "phone": "8815920292",
+        "favVendors": [
+            {"name": "Elite Catering"},
+            {"name": "Star Entertainment"}
+        ],
+        "notifications": [
+            {"title": "Welcome to Riwayat Krishna!", "content": "Hello Krishna, We Welcome you to Riwayat and We hope that you enjoy the user experience!"},
+            {"title": "User Details Added...", "content": "Hi Krishna, your details have been updated please check the user profile to confirm, Thanks!"}
+        ]
+        
+    },
+    {
+        "name": "Akash Agarwal",
+        "role": "Developer",
+        "password": "honeyagarwal",
+        "username": "itsakashagrawal",
+        "email": "honeyagarwal043@gmail.com",
+        "image": "assets/team/akash.png",
+        "addressHome": "Radha Puram Estate, NH19, Mathura",
+        "addressOffice": "GLA University, Mathura",
+        "phone": "7017762120",
+        "favVendors": [
+            {"name": "Grand Events"},
+            {"name": "Culinary Masters"}
+        ],
+        "notifications": [
+            {"title": "Welcome to Riwayat Akash!", "content": "Hello Akash, We Welcome you to Riwayat and We hope that you enjoy the user experience!"},
+            {"title": "User Details Added...", "content": "Hi Akash, your details have been updated please check the user profile to confirm, Thanks!"}
+        ]
+        
+    },
+    {
+        "name": "Aditya Vashishth",
+        "role": "Developer",
+        "password": "adityapandit",
+        "username": "ThAditya",
+        "email": "aditya.vashishth95@gmail.com",
+        "image": "assets/team/aditya.png",
+        "addressHome": "Maholi Road, Mathura",
+        "addressOffice": "GLA University, Mathura",
+        "phone": "9149005094",
+        "favVendors": [
+            {"name": "Spectacular Venues"},
+            {"name": "Ultimate DJ"}
+        ],
+        "notifications": [
+            {"title": "Welcome to Riwayat Aditya!", "content": "Hello Aditya, We Welcome you to Riwayat and We hope that you enjoy the user experience!"},
+            {"title": "User Details Added...", "content": "Hi Aditya, your details have been updated please check the user profile to confirm, Thanks!"}
+        ]
+        
+    }
+]

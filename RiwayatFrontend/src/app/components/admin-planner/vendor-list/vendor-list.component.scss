@@ -1,0 +1,39 @@
+.vendor-list-container {
+    margin: 20px;
+  }
+  
+  .filter-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .category-select, .search-bar {
+    width: 45%;
+  }
+  
+  .vendor-avatar {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+  }
+  
+  mat-card {
+    margin: 10px;
+    width: 90%;
+    height: 80px;
+    border: 1px solid black;
+  }
+  
+  mat-grid-tile {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .submit-btn {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}

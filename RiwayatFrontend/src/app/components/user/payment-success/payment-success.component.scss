@@ -1,0 +1,28 @@
+.payment-success-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f4f8;
+  
+    .success-card {
+        text-align: center;
+        padding: 20px;
+        max-width: 400px;
+        border: 1px solid #4caf50;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    
+        & h1 {
+            color: #4caf50;
+            margin-left: 40px;
+        }
+    
+        & mat-card-actions {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+    }
+}
+  

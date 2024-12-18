@@ -1,0 +1,39 @@
+<div class="vendor-list-container">
+  <!-- Category Filter -->
+  <h2>Vendors List</h2>
+  <div class="filter-section">
+    <mat-form-field appearance="fill" class="category-select">
+      <mat-label>Filter by Category</mat-label>
+      <mat-select [(ngModel)]="selectedCategory" (selectionChange)="filterVendors()">
+        <mat-option *ngFor="let category of categories" [value]="category">{{category}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Search Bar -->
+    <mat-form-field appearance="outline" class="search-bar">
+      <mat-label>Search Vendors</mat-label>
+      <input matInput placeholder="Search by name">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </div>
+
+  <!-- Vendor List with selection -->
+  <mat-grid-list cols="1" rowHeight="90px" gutterSize="16px">
+    <mat-grid-tile *ngFor="let vendor of filteredVendors" (click)="toggleVendorSelection(vendor)">
+      <mat-card [class.selected]="selectedVendors.includes(vendor)"> <!-- Highlight selected vendors -->
+        <mat-card-header>
+          <div mat-card-avatar class="vendor-avatar">
+            <img [src]="vendor.image" alt="{{vendor.name}}">
+          </div>
+          <mat-card-title>{{ vendor.name }}</mat-card-title>
+          <mat-card-subtitle>{{ vendor.description }}</mat-card-subtitle>
+        </mat-card-header>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <!-- Submit Button -->
+  <div class="submit-btn">
+    <button mat-raised-button (click)="submitVendors()" style="background-color: black; color: #d6a553;">Add Vendor(s)</button>
+  </div>
+</div>

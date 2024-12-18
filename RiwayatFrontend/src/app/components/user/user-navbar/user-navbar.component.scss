@@ -1,0 +1,90 @@
+mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  
+  .logo img {
+    height: 80px;
+    margin-top: 10px;
+    margin-left: -8px;
+  }
+  
+  .spacer {
+    flex: 1;
+  }
+  
+  .navbar-icons button {
+    margin-right: 10px;
+    color: #d6a553;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+  .support-btn {
+    mat-icon{
+      color: #d6a553;
+    }
+  }
+
+  .icon-bar {
+    display: none;
+    @media (max-width: 768px) {
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+    
+  }
+  
+  .navbar-icons-responsive {
+    display: none;
+    @media (max-width:768px) {
+      display: flex;
+      justify-content: space-around;
+      width: 100%; 
+    }
+  }
+  
+  .navbar-icons-responsive button {
+    margin-right: 10px;
+    color: #d6a553;
+  }
+  
+  
+  .profile-pic {
+    border: 2px solid #d6a553;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin-top: -10px;
+  }
+  
+
+  .spacer button {
+    width: 50%;
+      border-radius: 8px;
+      border: 1px solid #d6a553;
+      margin-left: 38%;
+      color: #d6a553;
+      
+
+      @media (max-width: 768px) {
+        display: none;
+      }
+  }
+
+  .search-btn {
+    padding: 5px;
+    border-radius: 30px;
+    color: #d6a553;
+    background-color: black;
+    border: 1px solid #d6a553;
+    
+  }
+
+  .custom-icon {
+    font-weight: bold;
+    font-size: 25.5px;
+  }

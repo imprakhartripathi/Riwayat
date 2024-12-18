@@ -1,0 +1,124 @@
+.planner-profile-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 97%;
+
+  mat-card {
+    width: 100%;
+    margin: 20px 0;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .profile-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .planner-image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 150px;
+      height: 150px;
+      margin-right: 20px;
+    }
+
+    .planner-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .planner-info {
+      flex-grow: 1;
+      margin-left: 20px;
+
+      h2 {
+        font-size: 24px;
+        margin-bottom: 5px;
+      }
+
+      p {
+        margin: 5px 0;
+      }
+    }
+  }
+
+  .tiers {
+    ul {
+      list-style-type: none;
+      padding: 0;
+      
+      li {
+        margin-bottom: 10px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .questionnaire {
+    width: 100%;
+
+    mat-form-field.full-width {
+      width: 100%;
+    }
+
+    h4 {
+      margin-top: 15px;
+    }
+
+    .service-checkbox {
+      margin-bottom: 10px;
+    }
+  }
+
+  
+}
+.tier-card {
+  width: 450px;
+  height: 200px;
+  background-color: #f9f9f900;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #ebeaea00;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  &.selected {
+    background-color: #ebeaea00;
+    border: 2px solid #d6a553;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+}
+
+button[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.tier-img {
+  position: relative; 
+  width: 100%;
+  height: 100%; /* Equal height for all images */
+  overflow: auto;
+  
+
+  & img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image fits within its container */
+    border-radius: 5px; /* Consistent border radius for all */
+    display: block;
+  }
+}

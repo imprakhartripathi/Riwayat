@@ -1,0 +1,42 @@
+.search-results-container {
+    padding: 20px;
+  
+    h2 {
+      margin-bottom: 20px;
+    }
+  
+    .result-card-content {
+      padding: 15px;
+      margin-bottom: 20px;
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+  
+    mat-card {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  
+    mat-icon {
+      color: gold;
+      margin-bottom: -7px;
+    }
+  }
+  .vendor-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .img-c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    margin-right: 20px;
+    border-radius: 50%;
+  }
+    

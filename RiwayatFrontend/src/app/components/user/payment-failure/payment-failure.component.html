@@ -1,0 +1,19 @@
+<div class="payment-failure-container">
+    <mat-card class="failure-card">
+      <mat-card-header>
+        <div class="payfail" >
+            <h1>Payment Fail! </h1>
+            <mat-icon>clear</mat-icon>
+        </div>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Sorry! Your payment has been processed fail.</p>
+
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-stroked-button routerLink="/user">Return to Home</button>
+        <button mat-stroked-button (click)="openPaymentDialog()">Try again</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  

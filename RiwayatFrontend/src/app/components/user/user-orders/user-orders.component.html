@@ -1,0 +1,162 @@
+<div class="body-container">
+  <h1>Your Orders</h1>
+
+  <div *ngIf="todayPlannerOrders.length > 0 || todayVendorOrders.length > 0">
+
+    <h2>Orders Scheduled for Today</h2>
+    <!-- Today's Planner Orders -->
+    <div *ngIf="todayPlannerOrders.length > 0">
+      <div *ngFor="let order of todayPlannerOrders">
+        <mat-card class="result-card-content" >
+          <div class="img-c">
+          <img class="planner-img" mat-card-image [src]="order.plannerImage" alt="{{ order.plannerName }} Image">
+          </div>
+          <div class="result-det">
+            <h3>{{ order.plannerName }}</h3>
+            <!-- Display planner details -->
+            <div>
+              <p><strong>Event Type:</strong> {{ order.orderDetails.eventType }}</p>
+              <p><strong>Event Date:</strong> {{order.orderDetails.eventDate | dateFormatter}}</p> 
+              <p><strong>Fare:</strong> {{ order.fare }}</p>
+              <p><strong>Tier:</strong> {{ order.tier }}</p>
+            </div>
+          </div>
+          <div class="btn-div">
+            <!-- <button mat-icon-button matTooltip="Redirect" class="redirect-btn"><mat-icon>open_in_new</mat-icon></button> -->
+            <button mat-icon-button matTooltip="Cancel - Disabled" disabled class="cancel-btn-disabled"><mat-icon>remove_circle_outline</mat-icon></button>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+
+    <!-- Today's Vendor Orders -->
+    <div *ngIf="todayVendorOrders.length > 0">
+      <div *ngFor="let order of todayVendorOrders">
+        <mat-card class="result-card-content">
+          <div class="img-c">
+            <img class="vendor-img" mat-card-image [src]="order.orderDetails.vendorImage" alt="{{ order.orderDetails.vendorName }} Image" >
+          </div>
+          <div class="result-det">
+            <h3>{{ order.orderDetails.vendorName }}</h3>
+            
+            <!-- Display vendor details -->
+            <div>
+              <p><strong>Service Date:</strong> {{ order.orderDetails.servingDetails.serviceDate | dateFormatter }}</p>
+              <p><strong>Service Time:</strong> {{ order.orderDetails.servingDetails.serviceTime }}</p>
+              <p><strong>Location:</strong> {{ order.orderDetails.servingDetails.serviceLocationType }}</p>
+              <p><strong>Fare:</strong> ₹{{ order.orderDetails.vendorFare }}</p>
+            </div>
+          </div>
+          <div class="btn-div">
+            <!-- <button mat-icon-button matTooltip="Redirect" class="redirect-btn"><mat-icon>open_in_new</mat-icon></button> -->
+            <button mat-icon-button matTooltip="Cancel - Disabled" disabled class="cancel-btn-disabled"><mat-icon>remove_circle_outline</mat-icon></button>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="upcomingPlannerOrders.length > 0 || upcomingVendorOrders.length > 0">
+
+    <h2>Upcoming Orders</h2>
+    <!-- Upcoming Planner Orders -->
+    <div *ngIf="upcomingPlannerOrders.length > 0">
+      <div *ngFor="let order of upcomingPlannerOrders">
+        <mat-card class="result-card-content" >
+          <div class="img-c">
+          <img class="planner-img" mat-card-image [src]="order.plannerImage" alt="{{ order.plannerName }} Image">
+          </div>
+          <div class="result-det">
+            <h3>{{ order.plannerName }}</h3>
+            <!-- Display planner details -->
+            <div>
+              <p><strong>Event Type:</strong> {{ order.orderDetails.eventType }}</p>
+              <p><strong>Event Date:</strong> {{order.orderDetails.eventDate | dateFormatter}}</p> 
+              <p><strong>Fare:</strong> {{ order.fare }}</p>
+              <p><strong>Tier:</strong> {{ order.tier }}</p>
+            </div>
+          </div>
+          <div class="btn-div">
+            <!-- <button mat-icon-button matTooltip="Redirect" class="redirect-btn"><mat-icon>open_in_new</mat-icon></button> -->
+            <button mat-icon-button matTooltip="Cancel" (click)="cancelOrder(order.orderId)" class="cancel-btn"><mat-icon>remove_circle_outline</mat-icon></button>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+    <!-- Upcoming Vendor Orders -->
+    <div *ngIf="upcomingVendorOrders.length > 0">
+      <div *ngFor="let order of upcomingVendorOrders">
+        <mat-card class="result-card-content">
+          <div class="img-c">
+            <img class="vendor-img" mat-card-image [src]="order.orderDetails.vendorImage" alt="{{ order.orderDetails.vendorName }} Image" >
+          </div>
+          <div class="result-det">
+            <h3>{{ order.orderDetails.vendorName }}</h3>
+            
+            <!-- Display vendor details -->
+            <div>
+              <p><strong>Service Date:</strong> {{ order.orderDetails.servingDetails.serviceDate | dateFormatter }}</p>
+              <p><strong>Service Time:</strong> {{ order.orderDetails.servingDetails.serviceTime }}</p>
+              <p><strong>Location:</strong> {{ order.orderDetails.servingDetails.serviceLocationType }}</p>
+              <p><strong>Fare:</strong> ₹{{ order.orderDetails.vendorFare }}</p>
+            </div>
+          </div>
+          <div class="btn-div">
+            <!-- <button mat-icon-button matTooltip="Redirect" class="redirect-btn"><mat-icon>open_in_new</mat-icon></button> -->
+            <button mat-icon-button matTooltip="Cancel" (click)="cancelOrder(order.orderId)" class="cancel-btn"><mat-icon>remove_circle_outline</mat-icon></button>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="previousPlannerOrders.length > 0 || previousVendorOrders.length > 0">
+
+    <h2>Previous Orders</h2>
+    <!-- Upcoming Planner Orders -->
+    <div *ngIf="previousPlannerOrders.length > 0">
+      <div *ngFor="let order of previousPlannerOrders">
+        <mat-card class="result-card-content" >
+          <div class="img-c">
+          <img class="planner-img" mat-card-image [src]="order.plannerImage" alt="{{ order.plannerName }} Image">
+          </div>
+          <div class="result-det">
+            <h3>{{ order.plannerName }}</h3>
+            <!-- Display planner details -->
+            <div>
+              <p><strong>Event Type:</strong> {{ order.orderDetails.eventType }}</p>
+              <p><strong>Event Date:</strong> {{order.orderDetails.eventDate | dateFormatter}}</p> 
+              <p><strong>Fare:</strong> {{ order.fare }}</p>
+              <p><strong>Tier:</strong> {{ order.tier }}</p>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+    <!-- Upcoming Vendor Orders -->
+    <div *ngIf="previousVendorOrders.length > 0">
+      <div *ngFor="let order of previousVendorOrders">
+        <mat-card class="result-card-content">
+          <div class="img-c">
+            <img class="vendor-img" mat-card-image [src]="order.orderDetails.vendorImage" alt="{{ order.orderDetails.vendorName }} Image" >
+          </div>
+          <div class="result-det">
+            <h3>{{ order.orderDetails.vendorName }}</h3>
+            
+            <!-- Display vendor details -->
+            <div>
+              <p><strong>Service Date:</strong> {{ order.orderDetails.servingDetails.serviceDate | dateFormatter}}</p>
+              <p><strong>Service Time:</strong> {{ order.orderDetails.servingDetails.serviceTime }}</p>
+              <p><strong>Location:</strong> {{ order.orderDetails.servingDetails.serviceLocationType }}</p>
+              <p><strong>Fare:</strong> ₹{{ order.orderDetails.vendorFare }}</p>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  <!-- No Orders -->
+  <div *ngIf="todayPlannerOrders.length === 0 && todayVendorOrders.length === 0 && upcomingVendorOrders.length === 0 && upcomingPlannerOrders.length === 0 && previousPlannerOrders.length === 0 && previousVendorOrders.length === 0">
+    <p>No orders</p>
+  </div>
+</div>

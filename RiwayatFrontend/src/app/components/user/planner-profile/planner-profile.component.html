@@ -1,0 +1,164 @@
+<app-user-navbar></app-user-navbar>
+<div *ngIf="selectedPlanner; else noPlannerFound" class="planner-profile-page">
+  <mat-card class="profile-header">
+    <div class="planner-image-container">
+      <img [src]="selectedPlanner.image" alt="{{ selectedPlanner.name }}" class="planner-image" />
+    </div>
+    <div class="planner-info">
+      <h2>{{ selectedPlanner.name }}</h2>
+      <p>{{ selectedPlanner.bio }}</p>
+      <p><strong>Specialty:</strong> {{ selectedPlanner.specialty }}</p>
+      <p><strong>Experience:</strong> {{ selectedPlanner.experience }} events planned</p>
+      <p><strong>Planner Fare:</strong> {{ selectedPlanner.plannerFare }}</p>
+    </div>
+  </mat-card>
+
+  <mat-card class="tiers">
+    <h3>Tier Plans</h3>
+    <mat-divider></mat-divider>
+    <mat-grid-list cols="4" rowHeight="250px" gutterSize="16px">
+      <mat-grid-tile *ngFor="let tier of selectedPlanner.tiers" (click)="selectTier(tier)">
+        <mat-card class="tier-card" [ngClass]="{'selected': selectedTier?.name === tier.name}">
+          <div class="tier-img">
+            <img [src]="tier.image" [alt]="tier.name">
+          </div>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card>
+
+  <mat-card class="questionnaire" *ngIf="selectedTier">
+    <h3>{{ selectedTier.name }} Tier Questionnaire</h3>
+    <form [formGroup]="tierForm">
+      <ng-container [ngSwitch]="selectedTier.name">
+        <!-- Basic Tier Form -->
+        <div *ngSwitchCase="'Basic'">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>What Kind of Event do you want?</mat-label>
+            <input matInput formControlName="eventType" placeholder="e.g., Wedding, Birthday" />
+          </mat-form-field>
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>At what date do you want it?</mat-label>
+            <input matInput [matDatepicker]="basicPicker" formControlName="eventDate" placeholder="Choose a date" />
+            <mat-datepicker-toggle matSuffix [for]="basicPicker"></mat-datepicker-toggle>
+            <mat-datepicker #basicPicker></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>At what time do you want it?</mat-label>
+            <input matInput formControlName="eventTime" placeholder="Enter event time" />
+          </mat-form-field>
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Describe what you are looking forward to in this event (optional)</mat-label>
+            <textarea matInput formControlName="eventDescription" placeholder="e.g., Theme, motive"></textarea>
+          </mat-form-field>
+        </div>
+        <!-- Standard Tier -->
+        <div *ngSwitchCase="'Standard'">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>What Kind of Event do you want?</mat-label>
+            <input matInput formControlName="eventType" placeholder="e.g., Wedding, Birthday" />
+          </mat-form-field>
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>At what date do you want it?</mat-label>
+            <input matInput [matDatepicker]="basicPicker" formControlName="eventDate" placeholder="Choose a date" />
+            <mat-datepicker-toggle matSuffix [for]="basicPicker"></mat-datepicker-toggle>
+            <mat-datepicker #basicPicker></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>At what time do you want it?</mat-label>
+            <input matInput formControlName="eventTime" placeholder="Enter event time" />
+          </mat-form-field>
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Describe what you are looking forward to in this event (optional)</mat-label>
+            <textarea matInput formControlName="eventDescription" placeholder="e.g., Theme, motive"></textarea>
+          </mat-form-field>
+        </div>
+       <!-- Premium Tier -->
+       <div *ngSwitchCase="'Premium'">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>What Kind of Event do you want?</mat-label>
+          <input matInput formControlName="eventType" placeholder="e.g., Wedding, Birthday" />
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>At what date do you want it?</mat-label>
+          <input matInput [matDatepicker]="basicPicker" formControlName="eventDate" placeholder="Choose a date" />
+          <mat-datepicker-toggle matSuffix [for]="basicPicker"></mat-datepicker-toggle>
+          <mat-datepicker #basicPicker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>At what time do you want it?</mat-label>
+          <input matInput formControlName="eventTime" placeholder="Enter event time" />
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Describe what you are looking forward to in this event (optional)</mat-label>
+          <textarea matInput formControlName="eventDescription" placeholder="e.g., Theme, motive"></textarea>
+        </mat-form-field>
+        <h2>Would You Like to Have Some Addons?</h2>
+        <div formGroupName="addons">
+          <mat-checkbox formControlName="freeSnacks">Free Snacks Service</mat-checkbox><br>
+          <mat-checkbox formControlName="waiterDiscount">50% off Waiter Service</mat-checkbox><br>
+          <mat-checkbox formControlName="artistDiscount">30% off Stand Up artists</mat-checkbox>
+        </div>
+      </div>
+      <!-- Custom Tier -->
+      <div *ngSwitchCase="'Custom'">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>What Kind of Event do you want?</mat-label>
+          <input matInput formControlName="eventType" placeholder="e.g., Wedding, Birthday" />
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>At what date do you want it?</mat-label>
+          <input matInput [matDatepicker]="basicPicker" formControlName="eventDate" placeholder="Choose a date" />
+          <mat-datepicker-toggle matSuffix [for]="basicPicker"></mat-datepicker-toggle>
+          <mat-datepicker #basicPicker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>At what time do you want it?</mat-label>
+          <input matInput formControlName="eventTime" placeholder="Enter event time" />
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Describe what you are looking forward to in this event (optional)</mat-label>
+          <textarea matInput formControlName="eventDescription" placeholder="e.g., Theme, motive"></textarea>
+        </mat-form-field>
+        <h2>Would You Like to Have Some Addons?</h2>
+        <div formGroupName="addons">
+          <mat-checkbox formControlName="freeSnacks">Free Snacks Service</mat-checkbox><br>
+          <mat-checkbox formControlName="waiterDiscount">50% off Waiter Service</mat-checkbox><br>
+          <mat-checkbox formControlName="artistDiscount">30% off Stand Up artists</mat-checkbox>
+        </div>
+        <br><br>
+        <h2>What Services would You like Us to Manage?</h2>
+        <div formGroupName="customServices">
+          <mat-checkbox formControlName="customVenue">Venue</mat-checkbox><br>
+          <mat-checkbox formControlName="customCatering">Catering</mat-checkbox><br>
+          <mat-checkbox formControlName="customDecorations">Decorations</mat-checkbox><br>
+          <mat-checkbox formControlName="customEntertainment">Entertainment</mat-checkbox><br>
+          <mat-checkbox formControlName="customWaiters">Waiters</mat-checkbox>
+        </div>
+      </div>
+        
+
+      </ng-container>
+    </form>
+  </mat-card>
+
+  <button mat-raised-button color="primary" [disabled]="!tierForm.valid" (click)="confirmOrder()">
+    Confirm Order
+  </button>
+</div>
+
+<ng-template #noPlannerFound>
+  <p>No planner found. Please try again with a different name.</p>
+</ng-template>

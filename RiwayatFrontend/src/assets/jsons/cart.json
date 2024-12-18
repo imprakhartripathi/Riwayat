@@ -1,0 +1,252 @@
+[
+    {
+        "orderBy": "ThAditya",
+        "orderId": "191",
+        "isPlannerOrder": true,
+        "isVendorOrder": false,
+        "orderDetails": {
+          "eventType": "Wedding Ceremony",
+          "eventDate": "2026-05-24T18:30:00.000Z",
+          "eventTime": "6 PM",
+          "eventDescription": "I would like you to plan a wedding for my brother, he likes classy weddings no over the top stuff",
+          "addons": {
+            "freeSnacks": false,
+            "waiterDiscount": true,
+            "artistDiscount": false
+          },
+          "customServices": {
+            "customVenue": true,
+            "customCatering": true,
+            "customEntertainment": false,
+            "customDecorations": true,
+            "customWaiters": true
+          }
+        },
+        "plannerName": "Dr. House",
+        "tier": "Premium",
+        "fare": "₹10,000",
+        "plannerImage": "assets/dr-house2.jpg"
+      },
+      {
+        "orderId": "201",
+        "orderBy": "itsakashagrawal",
+        "isPlannerOrder": false,
+        "isVendorOrder": true,
+        "orderDetails": {
+          "vendorName": "Ultimate DJ",
+          "vendorImage": "assets/vendor.jpg",
+          "servingDetails": {
+            "serviceLocationType": "Custom Address",
+            "customAddress": "Krishna Valley Garden, NH 19, Mathura",
+            "serviceDate": "2024-11-29T18:30:00.000Z",
+            "serviceTime": "7 PM",
+            "serviceInstructions": "Remix the 2000's Bollywood Songs with some Modern EDM beats"
+          },
+          "coordinatorDetails": {
+            "coordinatorName": "Akash",
+            "coordinatorPhone": "7017762120",
+            "coordinatorAltPhone": ""
+          },
+          "services": [
+            {
+              "name": "Wedding DJ",
+              "description": "Specialized wedding DJ services with romantic and upbeat tracks.",
+              "fare": 18000,
+              "image": "assets/vendor.services.png",
+              "selected": true
+            }
+          ],
+          "isVendorOrder": true,
+          "vendorFare": 10000
+        },
+        "plannerImage": "assets/user.png"
+      },
+      {
+        "orderId": "014",
+        "orderBy": "imprakhartripathi",
+        "isPlannerOrder": true,
+        "isVendorOrder": false,
+        "orderDetails": {
+          "eventType": "Corporate Event",
+          "eventDate": "2024-11-26T18:30:00.000Z",
+          "eventTime": "5 PM",
+          "eventDescription": "I want you to plan an event for me, its my Boss's Retirement Party, We Work in the Software Industry",
+          "addons": {
+            "freeSnacks": false,
+            "waiterDiscount": false,
+            "artistDiscount": true
+          },
+          "customServices": {
+            "customVenue": false,
+            "customCatering": false,
+            "customEntertainment": false,
+            "customDecorations": false,
+            "customWaiters": false
+          }
+        },
+        "plannerName": "Harvey Specter",
+        "tier": "Premium",
+        "fare": "₹10,000",
+        "plannerImage": "assets/harvey.jpg"
+      },
+      {
+        "orderId": "089",
+        "orderBy": "imkrishnabansal",
+        "isPlannerOrder": false,
+        "isVendorOrder": true,
+        "orderDetails": {
+          "vendorName": "Star Entertainment",
+          "vendorImage": "assets/vendor.jpg",
+          "servingDetails": {
+            "serviceLocationType": "Custom Address",
+            "customAddress": "Diamond Gardens, Cantt Road, Lucknow",
+            "serviceDate": "2024-09-10T18:30:00.000Z",
+            "serviceTime": "8 PM",
+            "serviceInstructions": "its my Parents' Wedding Anniversary and they both enjoy Kishor Kumar and RD Burman's Songs"
+          },
+          "coordinatorDetails": {
+            "coordinatorName": "Krishna Bansal",
+            "coordinatorPhone": "8815920292",
+            "coordinatorAltPhone": ""
+          },
+          "services": [
+            {
+              "name": "Live Bands",
+              "description": "Bands across genres to match your event theme.",
+              "fare": 25000,
+              "image": "assets/vendor.services.png",
+              "selected": true
+            }
+          ],
+          "isVendorOrder": true,
+          "vendorFare": 10000
+        },
+        "plannerImage": "assets/user.png"
+      },
+      {
+        "orderId": "021",
+        "orderBy": "imkrishnabansal",
+        "isPlannerOrder": true,
+        "isVendorOrder": false,
+        "orderDetails": {
+          "eventType": "Birthday Party",
+          "eventDate": "2024-12-16T18:30:00.000Z",
+          "eventTime": "7 PM",
+          "eventDescription": "Its my Friend's Birthday, She likes Poetry, flowers and Chinese Food",
+          "addons": {
+            "freeSnacks": true,
+            "waiterDiscount": false,
+            "artistDiscount": false
+          },
+          "customServices": {
+            "customVenue": false,
+            "customCatering": true,
+            "customEntertainment": true,
+            "customDecorations": true,
+            "customWaiters": false
+          }
+        },
+        "plannerName": "Donna",
+        "tier": "Custom",
+        "fare": "₹10,000",
+        "plannerImage": "assets/donna.jpg"
+      },
+      
+{
+  "orderId": "101",
+    "orderBy": "imprakhartripathi",
+    "isPlannerOrder": false,
+    "isVendorOrder": true,
+    "orderDetails": {
+      "vendorName": "Elegant Decorations",
+      "vendorImage": "assets/vendor.jpg",
+      "servingDetails": {
+        "serviceLocationType": "Home Address",
+        "customAddress": "",
+        "serviceDate": "2024-12-08T18:30:00.000Z",
+        "serviceTime": "6 PM",
+        "serviceInstructions": "Keep the theme White"
+      },
+      "coordinatorDetails": {
+        "coordinatorName": "Shashank Tripathi",
+        "coordinatorPhone": "7081150666",
+        "coordinatorAltPhone": ""
+      },
+      "services": [
+        {
+          "name": "Floral Arrangements",
+          "description": "Beautiful flower decorations tailored to your theme.",
+          "fare": 10000,
+          "image": "assets/vendor.services.png",
+          "selected": true
+        },
+        {
+          "name": "Lighting Decor",
+          "description": "Elegant lighting setups to enhance ambiance.",
+          "fare": 8000,
+          "image": "assets/vendor.services.png",
+          "selected": true
+        }
+      ],
+      "isVendorOrder": true,
+      "vendorFare": 10000
+    },
+    "plannerImage": "assets/user.png"
+  },
+  {
+    "orderId": "012",
+    "orderBy": "imprakhartripathi",
+    "isPlannerOrder": false,
+    "isVendorOrder": true,
+    "orderDetails": {
+      "vendorName": "Culinary Masters",
+      "vendorImage": "assets/vendor.jpg",
+      "servingDetails": {
+        "serviceLocationType": "Home Address",
+        "customAddress": "",
+        "serviceDate": "2024-12-09T18:30:00.000Z",
+        "serviceTime": "6 PM",
+        "serviceInstructions": "its an Engagement Ceremony, so keep things in nicer pots if possible"
+      },
+      "coordinatorDetails": {
+        "coordinatorName": "Shashank Tripathi",
+        "coordinatorPhone": "7081150666",
+        "coordinatorAltPhone": ""
+      },
+      "services": [
+        {
+          "name": "North Indian Cuisine",
+          "description": "Popular North Indian flavors.",
+          "fare": 800,
+          "image": "assets/vendor.services.png",
+          "selected": true
+        },
+        {
+          "name": "Street Food",
+          "description": "Indian street food counters.",
+          "fare": 600,
+          "image": "assets/vendor.services.png",
+          "selected": true
+        },
+        {
+          "name": "Sweets & Savories",
+          "description": "Traditional sweets and snacks.",
+          "fare": 500,
+          "image": "assets/vendor.services.png",
+          "selected": true
+        },
+        {
+          "name": "Juice & Shake Bar",
+          "description": "Refreshing drinks and shakes.",
+          "fare": 300,
+          "image": "assets/vendor.services.png",
+          "selected": true
+        }
+      ],
+      "isVendorOrder": true,
+      "vendorFare": 10000
+    },
+    "plannerImage": "assets/user.png"
+  }
+  
+]

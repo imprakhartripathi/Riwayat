@@ -1,0 +1,37 @@
+.main-container {
+    margin: 35px;
+}
+
+.event-name {
+    margin-bottom: 30px;
+}
+.select-vendor {
+    margin-bottom: 30px;
+}
+
+.singleDate {
+    margin-top: 20px;
+}
+.dateRange {
+    margin-top: 20px;
+}
+.submit-btn {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+mat-form-field {
+    width: 100%;
+}
+
+mat-button-toggle-group {
+    border-radius: 30px;
+}
+
+.vendor-chip {
+    margin-top: 20px;
+    margin: 10px;
+    display: inline-flex;
+    flex-direction: row;
+}

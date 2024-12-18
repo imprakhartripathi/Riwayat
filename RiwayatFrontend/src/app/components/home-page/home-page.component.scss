@@ -15,22 +15,24 @@ $primary-color: #cea660; // Gold color for accents
 }
 
 .welcome-card {
-  background: linear-gradient(to right, black, black, #cea660);
+  background: linear-gradient(to right,black, black, #cea660);
   color: $primary-color;
   width: 100%; // Adjust as needed
+  height: 300px;
   border-radius: 8px;
   padding: 1.5rem;
 
   @media (max-width: 768px) {
-    background: linear-gradient(to bottom, black, black,#cea660);
+    background: linear-gradient(to bottom,black, black, #cea660);
   }
-
 }
-
 .top-content {
   display: flex;
   align-items: center; // Vertically center the logo and text
   gap: 1rem; // Space between logo and text
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 .logo-container {
@@ -41,7 +43,7 @@ $primary-color: #cea660; // Gold color for accents
 }
 
 .logo {
-  max-width: 150px; // Adjust as needed
+  max-width: 100px; // Adjust as needed
   height: auto;
   @media (max-width: 768px) {
     display: none;
@@ -82,6 +84,7 @@ $primary-color: #cea660; // Gold color for accents
     align-items: center;
     text-align: center;
 
+
     // &:hover {
     //   background: radial-gradient(circle, white, white, white, #cea660);
     //   transition: 0.3s;
@@ -90,7 +93,14 @@ $primary-color: #cea660; // Gold color for accents
     //     color: #313131;
     //   }
 
-    // }
+  // }
+  .feature-card img {
+    max-width: 100%;
+    height: 120px; /* Adjust as needed */
+    object-fit: cover; /* Ensures the image fills the space without distortion */
+    border-radius: 8px; /* Optional for rounded corners */
+  }
+  
 
     mat-card {
       background-color: transparent;
@@ -206,7 +216,7 @@ $primary-color: #cea660; // Gold color for accents
   }
 
   @media (max-width: 768px) {
-    display: none;
+    margin-right: 0;
   }
 
 }

@@ -1,0 +1,143 @@
+<app-user-navbar></app-user-navbar>
+
+<div *ngIf="selectedVendor; else noVendorFound" class="vendor-profile-page">
+    <mat-card class="profile-header">
+        <div class="vendor-image-container">
+            <img [src]="selectedVendor.image" alt="{{ selectedVendor.name }}" class="vendor-image" />
+        </div>
+        <div class="vendor-info">
+            <h2>{{ selectedVendor.name }}</h2>
+            <p>{{ selectedVendor.description }}</p>
+            <p><strong>Category:</strong> {{ selectedVendor.category }}</p>
+            <p><strong>Experience:</strong> {{ selectedVendor.peopleServed }} people served.</p>
+        </div>
+    </mat-card>
+
+    <!-- Stepper section -->
+    <div class="stepper">
+        <mat-horizontal-stepper linear #stepper animationDuration="700">
+            <!-- Step 1: Services Selection -->
+            <mat-step>
+                <ng-template matStepLabel>Select Services</ng-template>
+                <div class="services-section">
+                    <h2>Select Your Required Services</h2>
+                    <div class="services-list" *ngFor="let service of selectedVendor.services">
+                        <mat-checkbox [(ngModel)]="service.selected" (change)="updateSelectedServicesCount()">
+                            <mat-card class="service-card">
+                                <div class="service-content">
+                                    <img [src]="service.image" alt="{{ service.name }}" class="service-image" />
+                                    <div class="service-info">
+                                        <h4>{{ service.name }}</h4>
+                                        <p>{{ service.description }}</p>
+                                        <p><strong>Fare:</strong> ₹{{ service.fare }}</p>
+                                    </div>
+                                </div>
+                            </mat-card>
+                        </mat-checkbox>
+                    </div>
+                </div>
+                <div class="btn">
+                    <button 
+                    mat-button 
+                    class="continue-button"
+                    [disabled]="!selectedServicesCount"
+                    matStepperNext>
+                    Continue with {{ selectedServicesCount }} Services
+                </button>
+                <mat-error class="err" *ngIf="!selectedServicesCount">
+                    At Least One Service Need to be Selected!!!
+                </mat-error>
+                </div>
+            </mat-step>
+
+            <!-- Step 2: Fill Out Details -->
+            <mat-step>
+                <ng-template matStepLabel>Fill Out Details</ng-template>
+                <div class="form"  [formGroup]="serviceForm">
+                    <h2>Fill Out The Order Details</h2>
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Where would you like to have this service delivered?</mat-label>
+                        <mat-select formControlName="serviceLocationType" placeholder="Select address type">
+                            <mat-option value="Home Address">Home Address</mat-option>
+                            <mat-option value="Office Address">Office Address</mat-option>
+                            <mat-option value="Custom Address">Custom Address</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field *ngIf="serviceForm.get('serviceLocationType')?.value === 'Custom Address'" class="full-width" appearance="outline">
+                        <mat-label>Enter Custom Address</mat-label>
+                        <input matInput formControlName="customAddress" placeholder="Enter custom address" />
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>At what date do you want it?</mat-label>
+                        <input matInput [matDatepicker]="basicPicker" formControlName="serviceDate" placeholder="Choose a date" />
+                        <mat-datepicker-toggle matSuffix [for]="basicPicker"></mat-datepicker-toggle>
+                        <mat-datepicker #basicPicker></mat-datepicker>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>At what time do you want it?</mat-label>
+                        <input matInput formControlName="serviceTime" placeholder="Enter a time" />
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Any Specific Instructions? (optional)</mat-label>
+                        <textarea matInput formControlName="serviceInstructions" placeholder="e.g. Any Request, Modifications, etc."></textarea>
+                    </mat-form-field>
+
+                    <div class="btn">
+                        <div class="flex">
+                            <button mat-button class="continue-button" matStepperPrevious>Back</button>
+                        <button mat-button class="continue-button" [disabled]="isContinueDisabledForService()" matStepperNext>
+                            Continue
+                        </button>
+                        </div>
+                        <mat-error class="err" *ngIf="isContinueDisabledForService()">
+                            All Form Fields Need to be Filled!!!
+                        </mat-error>
+                    </div>
+                </div>
+            </mat-step>
+
+            <!-- Step 3: Confirm Booking -->
+            <mat-step>
+                <ng-template matStepLabel>Confirm Booking</ng-template>
+                <h2>Fill Out The Confirmation Details</h2>
+                <div class="form"  [formGroup]="coordinatorForm">
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Event Coordinator's Name</mat-label>
+                        <input matInput formControlName="coordinatorName" placeholder="Enter the Coordinator's Name" />
+                    </mat-form-field>
+
+                    <div class="flex-sa">
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Coordinator's Phone Number</mat-label>
+                            <input matInput formControlName="coordinatorPhone" placeholder="Enter the Coordinator's Phone Number" />
+                        </mat-form-field>
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Alternate Phone Number</mat-label>
+                            <input matInput formControlName="coordinatorAltPhone" placeholder="Enter an Alternate Phone Number" />
+                        </mat-form-field>
+                    </div>
+
+                    <div class="btn">
+                        <div class="flex">
+                            <button mat-button class="continue-button" matStepperPrevious>Back</button>
+                        <button mat-button class="continue-button" [disabled]="isContinueDisabledForCoordinator()" (click)="onSubmit()">
+                            Confirm
+                        </button>
+                        </div>
+                        <mat-error class="err" *ngIf="isContinueDisabledForCoordinator()">
+                            All Form Fields Need to be Filled!!!
+                        </mat-error>
+                    </div>
+                </div>
+            </mat-step>
+        </mat-horizontal-stepper>
+    </div>
+</div>
+
+<ng-template #noVendorFound>
+    <p>No vendor found. Please try again with a different name.</p>
+</ng-template>

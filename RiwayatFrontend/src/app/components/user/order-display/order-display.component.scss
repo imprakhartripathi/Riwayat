@@ -1,0 +1,166 @@
+.body-container{
+    background-color: #f5f5f5;
+    height: 91%;
+  }
+  
+  .pay-btn {
+    position: relative;
+  }
+  
+  .order-prev-container {
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+  
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+  
+    .flex-container {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  
+    .planner-image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 150px;
+      height: 150px;
+      margin-right: 20px;
+    }
+  
+    .planner-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  
+    .planner-details{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .order-details-container {
+      width: 50%;
+      overflow-y: auto;
+      max-height: 80vh;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  
+      & mat-card{
+        padding: 10px;
+      }
+    }
+  
+    .right-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 30%;
+    }
+  
+    .order-details, .planner-details, .price-summary {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  
+    .order-details {
+      max-height: 70vh;
+      overflow-y: auto;
+    }
+  
+    h2 {
+      color: #555;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+  
+    .form-fields mat-form-field, .addons, .custom-services {
+      width: 100%;
+    }
+  
+    .cmf-btn {
+     
+      padding: 8px;
+      height: 50px;
+      color: #d6a553;
+      background-color: black;
+      border-radius: 7px;
+    }
+  
+    .other-btn {
+     
+      padding: 8px;
+      color: #d6a553;
+      background-color: rgb(57, 57, 57);
+      border-radius: 7px;
+    }
+  
+    .price-summary {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      color: #3f51b5;
+      font-weight: bold;
+  
+      h2 {
+        font-size: 1.5rem;
+      }
+  
+      p {
+        font-size: 1.8rem;
+        color: #d6a553;
+      }
+    }
+  
+    .form-fields {
+      margin-top: 16px;
+    }
+  
+   .services{
+  margin-bottom: 12px;
+  
+    .service-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 98%;
+      padding: 15px;
+      margin: 8px;
+    }
+  
+    .service-content {
+      display: flex;
+      align-items: center;
+    }
+  
+    .service-image {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-right: 10px;
+    }
+  
+    .service-info {
+      h4 {
+        margin: 0;
+        font-size: 18px;
+      }
+  
+      p {
+        margin: 5px 0;
+        font-size: 14px;
+      }
+    }
+   }
+  }
+  

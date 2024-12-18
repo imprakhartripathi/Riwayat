@@ -1,0 +1,48 @@
+<div class="employee-profile-container">
+  <mat-card class="profile-summary">
+    <mat-card-header>
+      <img [src]="profilePicUrl" class="profile-pic" alt="Employee Profile Picture" />
+      <div class="employee-details">
+        <mat-card-title>{{admin.name}}</mat-card-title>
+        <mat-card-subtitle>
+          <p>{{admin.title}}</p>
+          <p>Contact: {{admin.phone}} <br>
+            Email: {{admin.email}}</p>
+        </mat-card-subtitle>
+      </div>
+    </mat-card-header>
+
+    <mat-card-actions>
+      <button mat-button><mat-icon>save</mat-icon></button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card class="attendance-history">
+    <h3>Attendance History</h3>
+    <div class="attendance-records">
+      <!-- Example of a record card -->
+      <mat-card class="attendance-record">
+        <div class="record-date">
+          <span class="date">March 08, 2023</span>
+          <span class="status on-time">On Time</span>
+        </div>
+        <div class="record-times">
+          <p>Check In: 08:53</p>
+          <p>Check Out: 17:15</p>
+        </div>
+      </mat-card>
+
+      <mat-card class="attendance-record">
+        <div class="record-date">
+          <span class="date">March 07, 2023</span>
+          <span class="status late">Late</span>
+        </div>
+        <div class="record-times">
+          <p>Check In: 08:27</p>
+          <p>Check Out: 17:09</p>
+        </div>
+      </mat-card>
+      <!-- More records as needed -->
+    </div>
+  </mat-card>
+</div>

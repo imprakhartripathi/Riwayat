@@ -1,0 +1,28 @@
+<div class="favorites-container">
+  <h2>Your Favorite Vendors</h2>
+
+  <!-- If there are no favorite vendors -->
+  <div *ngIf="favoriteVendors.length === 0" class="no-favorites">
+    <p>You have no favorite vendors.</p>
+  </div>
+
+  <!-- Show favorite vendors if available -->
+  <div *ngFor="let vendor of favoriteVendors; let i = index" class="vendor-item">
+    <mat-card class="result-card-content" (click)="goToProfile(vendor.name)">
+        <div class="img-c">
+          <img class="vendor-img" mat-card-image [src]="vendor.image" alt="{{ vendor.name }} Image">
+        </div>
+          
+          <!-- Display vendor details -->
+          <div>
+            <h3>{{ vendor.name }}</h3>
+            <p>{{ vendor.description }}</p>
+            <p>Category: {{ vendor.category }}</p>
+            <p>
+              Rating: 
+              <mat-icon *ngFor="let star of getStars(vendor.rating)">star</mat-icon>
+              ({{ vendor.rating }} / 5)
+            </p>
+          </div>
+    </mat-card>
+  </div>

@@ -1,0 +1,27 @@
+<app-user-navbar></app-user-navbar>
+
+<div class="container">
+    <mat-card class="card">
+        <mat-card-header>
+            <h2>You Can Contact Support Using</h2>
+        </mat-card-header>
+        <p>support&#64;riwayatservices.com</p>
+    </mat-card>
+    <mat-card class="team-card">
+        <mat-card-header>
+            <h1>Our Team</h1>
+        </mat-card-header>
+        <div class="flex">
+            <div class="member-card" *ngFor="let member of members">
+                <mat-card>
+                    <img [src]="member.image" [alt]="member.name">
+                    <div class="dets">
+                        <h4>{{member.name}}</h4>
+                        <h5>{{member.role}}</h5>
+                        <p>{{member.mail}}</p>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+    </mat-card>
+</div>

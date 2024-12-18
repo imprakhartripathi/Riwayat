@@ -1,0 +1,42 @@
+<app-user-navbar></app-user-navbar>
+<div class="search-results-container">
+  <h2>Search Results for "{{ searchTerm }}"</h2>
+  
+  <div *ngIf="searchResults.length > 0; else noResults">
+    <div *ngFor="let result of searchResults" class="result-card">
+      <mat-card class="result-card-content" (click)="goToProfile(result)">
+        <div class="img-c">
+          <img class="vendor-img" mat-card-image [src]="result.image" alt="{{ result.name }} Image" *ngIf="result.type === 'vendor'">
+        <img class="planner-img" mat-card-image [src]="result.image" alt="{{ result.name }} Image" *ngIf="result.type === 'planner'">
+        </div>
+        <div class="result-det">
+          <h3>{{ result.name }}</h3>
+          
+          <!-- Display vendor details -->
+          <div *ngIf="result.type === 'vendor'">
+            <p>{{ result.description }}</p>
+            <p>Category: {{ result.category }}</p>
+            <p>
+              Rating: 
+              <mat-icon *ngFor="let star of getStars(result.rating)">star</mat-icon>
+              ({{ result.rating }} / 5)
+            </p>
+            <p>{{ result.peopleServed }} people served</p>
+          </div>
+
+          <!-- Display planner details -->
+          <div *ngIf="result.type === 'planner'">
+            <p>{{ result.bio }}</p>
+            <p>Specialty: {{ result.specialty }}</p>
+            <p>Experience: {{ result.experience }} events</p>
+            <p>Fare: {{ result.plannerFare }}</p>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+
+  <ng-template #noResults>
+    <p>No results found for "{{ searchTerm }}".</p>
+  </ng-template>
+</div>

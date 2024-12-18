@@ -1,0 +1,18 @@
+<div class="main">
+  <h2>Notifications</h2>
+  <div class="notification-container" *ngIf="notifications.length > 0; else noNotifications">
+    <mat-expansion-panel *ngFor="let notification of notifications">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ notification.title }}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>{{ notification.content }}</p>
+    </mat-expansion-panel>
+</div>
+
+  <ng-template #noNotifications>
+    <p>No notifications available.</p>
+  </ng-template>
+  
+</div>

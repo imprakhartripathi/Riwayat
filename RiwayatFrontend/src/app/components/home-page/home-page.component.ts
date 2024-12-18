@@ -10,13 +10,38 @@ import { AuthenticatorComponent } from '../../authenticator/authenticator.compon
 })
 export class HomePageComponent {
   features = [
-    { title: 'Wedding Planning', description: 'Hey! Wedding Planners, need a tool to Book and Manage the Vendors, We are here for You.' },
-    { title: 'Birthday Parties', description: 'Multiple Packeges & Deals on Birthday Parties.' },
-    { title: 'Social Gathering', description: 'Book the Catering and Venue together for Social Events.' },
-    { title: 'Private Service', description: 'Get Private Service at Your Home for any event you want.' },
-    { title: 'Bulk Order Catering', description: 'Book Proper Catering Services With Cooks and Servers.' },
-    { title: 'Mini Project', description: 'This Project is our Mini Project for 3rd Year of B. Tech-CS at GLA University' }
+    { 
+      title: 'Wedding Planning', 
+      description: 'Hey! Wedding Planners, need a tool to Book and Manage the Vendors, We are here for You.', 
+      image: '../../../assets/wed2.jpeg' 
+    },
+    { 
+      title: 'Birthday Parties', 
+      description: 'Multiple Packeges & Deals on Birthday Parties.', 
+      image: '../../../assets/bdy.jpg' 
+    },
+    { 
+      title: 'Social Gathering', 
+      description: 'Book the Catering and Venue together for Social Events.', 
+      image: '../../../assets/social.webp' 
+    },
+    { 
+      title: 'Private Service', 
+      description: 'Get Private Service at Your Home for any event you want.', 
+      image: '../../../assets/private.jpg' 
+    },
+    { 
+      title: 'Bulk Order Catering', 
+      description: 'Book Proper Catering Services With Cooks and Servers.', 
+      image: '../../../assets/bulk..webp' 
+    },
+    { 
+      title: 'Mini Project', 
+      description: 'This Project is our Mini Project for 3rd Year of B. Tech-CS at GLA University.', 
+      image: '../../../assets/images/mini-project.jpg' 
+    }
   ];
+  
 
   constructor(private router: Router, public dialog: MatDialog) {}
 

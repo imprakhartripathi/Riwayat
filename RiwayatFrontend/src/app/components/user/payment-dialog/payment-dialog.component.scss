@@ -1,0 +1,38 @@
+.main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 400px;
+
+  mat-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    width: 90%;
+    padding: 30px;
+    
+    & h2 {
+      // color: #008cff;
+      color: black;
+    }
+
+    .rzp-container{
+      display: block;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+h2 {
+  text-align: center;
+}
+
+p{
+  display: block;
+  
+}

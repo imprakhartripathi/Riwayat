@@ -1,0 +1,53 @@
+<div class="main-container">
+    <div class="event-name">
+        <h2>Enter a Name For The Event</h2>
+        <mat-form-field appearance="outline">
+            <mat-label>Event Name</mat-label>
+            <input matInput placeholder="Event Name">
+            <mat-icon matSuffix>reorder</mat-icon>
+          </mat-form-field>
+    </div>
+    <div class="select-vendor">
+        <h2>Select Vendor(s)</h2>
+        <button mat-raised-button style="background-color: black; color: #d6a553;" (click)="openVendorDialog()">Add Vendors</button>
+        <div class="vendor-list">
+            <div *ngFor="let vendor of vendors" class="vendor-chip">
+                <mat-chip>
+                {{ vendor.name }}
+                </mat-chip>
+            </div>
+        </div>
+    </div>
+    <div class="select-date">
+        <h2>Select a Date or a Date Range</h2>
+            <mat-button-toggle-group name="fontStyle" aria-label="Font Style" [(ngModel)]="dateType">
+                <mat-button-toggle value="singleDate">Single Date</mat-button-toggle>
+                <mat-button-toggle value="rangeDate">Date Range</mat-button-toggle>
+            </mat-button-toggle-group>
+
+          <div class="singleDate" *ngIf="dateType === 'singleDate'">
+            <mat-form-field appearance="outline">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepickerFilter]="dateFilter" [matDatepicker]="picker">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+          </div>
+          <div class="dateRange" *ngIf="dateType === 'rangeDate'">
+            <mat-form-field appearance="outline">
+                <mat-label>Enter a date range</mat-label>
+                <mat-date-range-input [rangePicker]="picker">
+                  <input matStartDate placeholder="Start date">
+                  <input matEndDate placeholder="End date">
+                </mat-date-range-input>
+                <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-date-range-picker #picker></mat-date-range-picker>
+              </mat-form-field>
+          </div>
+    </div>
+    <div class="submit-btn">
+        <button mat-raised-button style="background-color: black; color: #d6a553;">Add Event</button>
+    </div>
+</div>

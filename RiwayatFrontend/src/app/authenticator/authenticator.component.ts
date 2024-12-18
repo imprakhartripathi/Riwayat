@@ -2,6 +2,8 @@ import { Component, Optional } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DevService } from '../dev-service.service';
+import { AuthService } from '../auth.service'; // Import AuthService
 
 @Component({
   selector: 'app-authenticator',
@@ -10,51 +12,58 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class AuthenticatorComponent {
   isLogin: boolean = true;
+  hide = true;
   authForm: FormGroup;
-  newAuthForm: FormGroup;
-  superUser: string = 'Welcome, Big Daddy Boss';
+  // newAuthForm: FormGroup;
+  teamMembers: any[] = [];
 
-  constructor(private router: Router, @Optional() public dialogRef: MatDialogRef<AuthenticatorComponent>, private fb: FormBuilder) {
+  constructor(
+    private router: Router,
+    @Optional() public dialogRef: MatDialogRef<AuthenticatorComponent>,
+    private fb: FormBuilder,
+    private devService: DevService,
+    private authService: AuthService // Inject AuthService
+  ) {
     this.authForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
 
-    this.newAuthForm = this.fb.group({
-      name: ['', Validators.required],
-      phone: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
-      newPassword: ['', Validators.required]
-    });
+    // this.newAuthForm = this.fb.group({
+    //   name: ['', Validators.required],
+    //   phone: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
+    //   newPassword: ['', Validators.required]
+    // });
   }
 
-  toggleAuth() {
-    this.isLogin = !this.isLogin;
+  ngOnInit(): void {
+    this.devService.getTeamMembers().subscribe((data) => {
+      this.teamMembers = data;
+    });
   }
 
   onSubmit() {
     if (this.isLogin) {
       if (this.authForm.valid) {
         const { username, password } = this.authForm.value;
-        // Login logic
-        if (username === 'admin' && password === 'admin') {
-          this.router.navigate(['/admin']);
-          alert(this.superUser)
-        } else if (username === 'user' && password === 'user') {
+
+        // Check credentials against team members
+        const member = this.teamMembers.find(
+          (member) => member.username === username && member.password === password
+        );
+
+        if (member) {
+          alert(`Welcome, ${member.name}`);
+          this.authService.login(member);  // Store user in AuthService
           this.router.navigate(['/user']);
-        } else if (username === 'serviceprov' && password === 'serviceprov') {
-          this.router.navigate(['/serviceprov']);
+        } else if (username === 'user' && password === 'user') {
+          const guestUser = { name: "Guest User", username: "guestuser", email: 'Not Available', phone: 'Not Available' };
+          this.authService.login(guestUser);  // Store guest user
+          alert("Welcome, Guest User");
+          this.router.navigate(['/user']);
         } else {
           alert('Invalid credentials');
         }
-      } else {
-        alert('Please fill out all fields correctly');
-      }
-    } else {
-      // Sign-up logic
-      if (this.newAuthForm.valid) {
-        alert('Account created successfully');
-        console.log(this.newAuthForm.value);
-        // Additional account creation handling
       } else {
         alert('Please fill out all fields correctly');
       }
@@ -66,7 +75,19 @@ export class AuthenticatorComponent {
     }
   }
 
+  toggleAuth() {
+    this.isLogin = !this.isLogin;
+  }
+
   goToShowcase() {
     this.router.navigate(['/showcase']);
+  }
+
+  continueAsGuest(){
+    const guestUser = { name: "Guest User", username: "guestuser", email: 'Not Available', phone: 'Not Available' };
+    this.authService.login(guestUser);  // Store guest user
+    alert("Welcome, Guest User");
+    this.router.navigate(['/user']);
+    this.dialogRef.close();
   }
 }

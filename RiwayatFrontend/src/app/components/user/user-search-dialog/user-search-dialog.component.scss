@@ -1,0 +1,33 @@
+.user-search-dialog {
+    margin: 30px;
+  
+    .search-bar {
+      width: 100%;
+    }
+  
+    .suggestions-grid {
+      margin-top: 10px;
+  
+      .suggestion-card {
+        text-align: center;
+        justify-content: center;
+        // background-color: #f5f5f5;
+        background: linear-gradient(45deg, black, #3f341e, #cea660);
+        color: white;
+        cursor: pointer;
+        transition: all 0.3s ease-in;
+        width: 95%;
+        height: 95%;
+
+        &:hover {
+          background: linear-gradient(45deg, black, #727272);
+        }
+
+        mat-card-title {
+          font-weight: 500;
+          font-size: 30px;
+        }
+      }
+    }
+  }
+  
