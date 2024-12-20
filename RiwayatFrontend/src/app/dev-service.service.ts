@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DevService {
-  private teamUrl = 'assets/team/team.json'; // Path to your JSON file
+  private teamUrl = 'http://localhost:5000/api/team'; // API URL
 
   constructor(private http: HttpClient) {}
 
