@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class VendorJsonService {
-  private vendorUrl = 'assets/jsons/vendors.json'; // Path to your JSON file
+  private vendorUrl = 'http://localhost:5000/api/vendor'; // API URL // Path to your JSON file
 
   constructor(private http: HttpClient) {}
 
