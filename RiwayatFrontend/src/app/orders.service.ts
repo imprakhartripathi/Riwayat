@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class OrdersService {
-  private ordersUrl = 'assets/jsons/orders.json'; // Path to your JSON file
+  private ordersUrl = 'http://localhost:5000/api/orders'; // API URL
 
   constructor(private http: HttpClient) {}
 
