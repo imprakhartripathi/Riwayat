@@ -5,7 +5,7 @@
         <mat-card-header>
             <h2>You Can Contact Support Using</h2>
         </mat-card-header>
-        <p>support&#64;riwayatservices.com</p>
+        <p><a href="mailto:support@riwayatservices.com">support&#64;riwayatservices.com</a></p>
     </mat-card>
     <mat-card class="team-card">
         <mat-card-header>
@@ -18,7 +18,7 @@
                     <div class="dets">
                         <h4>{{member.name}}</h4>
                         <h5>{{member.role}}</h5>
-                        <p>{{member.mail}}</p>
+                        <p><a (click)="sendEmail(member.mail)">{{ member.mail }}</a></p>
                     </div>
                 </mat-card>
             </div>

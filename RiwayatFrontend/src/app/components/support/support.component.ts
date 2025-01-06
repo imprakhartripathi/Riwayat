@@ -22,4 +22,10 @@ export class SupportComponent implements OnInit {
       }));
     });
   }
+
+  sendEmail(email: string): void {
+    const mailtoLink = `mailto:${email}`;
+    window.open(mailtoLink, '_blank');
+  }
+  
 }

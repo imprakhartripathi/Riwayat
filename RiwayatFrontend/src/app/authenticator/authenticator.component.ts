@@ -4,11 +4,12 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DevService } from '../dev-service.service';
 import { AuthService } from '../auth.service'; // Import AuthService
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-authenticator',
   templateUrl: './authenticator.component.html',
-  styleUrls: ['./authenticator.component.scss']
+  styleUrls: ['./authenticator.component.scss'],
 })
 export class AuthenticatorComponent {
   isLogin: boolean = true;
@@ -22,11 +23,12 @@ export class AuthenticatorComponent {
     @Optional() public dialogRef: MatDialogRef<AuthenticatorComponent>,
     private fb: FormBuilder,
     private devService: DevService,
-    private authService: AuthService // Inject AuthService
+    private authService: AuthService, // Inject AuthService
+    private http: HttpClient
   ) {
     this.authForm = this.fb.group({
       username: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', Validators.required],
     });
 
     // this.newAuthForm = this.fb.group({
@@ -49,17 +51,23 @@ export class AuthenticatorComponent {
 
         // Check credentials against team members
         const member = this.teamMembers.find(
-          (member) => member.username === username && member.password === password
+          (member) =>
+            member.username === username && member.password === password
         );
 
         if (member) {
           alert(`Welcome, ${member.name}`);
-          this.authService.login(member);  // Store user in AuthService
+          this.authService.login(member); // Store user in AuthService
           this.router.navigate(['/user']);
         } else if (username === 'user' && password === 'user') {
-          const guestUser = { name: "Guest User", username: "guestuser", email: 'Not Available', phone: 'Not Available' };
-          this.authService.login(guestUser);  // Store guest user
-          alert("Welcome, Guest User");
+          const guestUser = {
+            name: 'Guest User',
+            username: 'guestuser',
+            email: 'Not Available',
+            phone: 'Not Available',
+          };
+          this.authService.login(guestUser); // Store guest user
+          alert('Welcome, Guest User');
           this.router.navigate(['/user']);
         } else {
           alert('Invalid credentials');
@@ -75,6 +83,10 @@ export class AuthenticatorComponent {
     }
   }
 
+  login(credentials: { username: string; password: string }) {
+    return this.http.post('http://localhost:5000/api/auth/login', credentials);
+  }
+
   toggleAuth() {
     this.isLogin = !this.isLogin;
   }
@@ -83,10 +95,15 @@ export class AuthenticatorComponent {
     this.router.navigate(['/showcase']);
   }
 
-  continueAsGuest(){
-    const guestUser = { name: "Guest User", username: "guestuser", email: 'Not Available', phone: 'Not Available' };
-    this.authService.login(guestUser);  // Store guest user
-    alert("Welcome, Guest User");
+  continueAsGuest() {
+    const guestUser = {
+      name: 'Guest User',
+      username: 'guestuser',
+      email: 'Not Available',
+      phone: 'Not Available',
+    };
+    this.authService.login(guestUser); // Store guest user
+    alert('Welcome, Guest User');
     this.router.navigate(['/user']);
     this.dialogRef.close();
   }

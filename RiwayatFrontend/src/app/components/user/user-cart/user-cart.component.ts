@@ -7,7 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-user-cart',
   templateUrl: './user-cart.component.html',
-  styleUrls: ['./user-cart.component.scss']
+  styleUrls: ['./user-cart.component.scss'],
 })
 export class UserCartComponent implements OnInit {
   currentUser: string = ''; // Placeholder for the current user
@@ -41,10 +41,12 @@ export class UserCartComponent implements OnInit {
       const today = new Date(currentDate).setHours(0, 0, 0, 0);
 
       // Filter orders based on current user
-      const userOrders = orders.filter(order => order.orderBy === this.currentUser);
+      const userOrders = orders.filter(
+        (order) => order.orderBy === this.currentUser
+      );
 
       // Separate and categorize orders
-      userOrders.forEach(order => {
+      userOrders.forEach((order) => {
         if (order.isPlannerOrder) {
           this.plannerOrders.push(order); // Add to plannerOrders array
         } else if (order.isVendorOrder) {
@@ -63,7 +65,7 @@ export class UserCartComponent implements OnInit {
   plannerFilter(): void {
     const currentDate = new Date().setHours(0, 0, 0, 0);
 
-    this.plannerOrders.forEach(order => {
+    this.plannerOrders.forEach((order) => {
       const orderDate = new Date(order.orderDetails.eventDate).getTime();
 
       if (orderDate === currentDate) {
@@ -79,8 +81,10 @@ export class UserCartComponent implements OnInit {
   vendorFilter(): void {
     const currentDate = new Date().setHours(0, 0, 0, 0);
 
-    this.vendorOrders.forEach(order => {
-      const orderDate = new Date(order.orderDetails.servingDetails.serviceDate).getTime();
+    this.vendorOrders.forEach((order) => {
+      const orderDate = new Date(
+        order.orderDetails.servingDetails.serviceDate
+      ).getTime();
 
       if (orderDate === currentDate) {
         this.todayVendorOrders.push(order); // Today's Vendor Orders
@@ -94,7 +98,7 @@ export class UserCartComponent implements OnInit {
 
   cancelOrder(orderId: string): void {
     const removeFromArray = (array: any[]) => {
-      const index = array.findIndex(order => order.orderId === orderId);
+      const index = array.findIndex((order) => order.orderId === orderId);
       if (index !== -1) {
         array.splice(index, 1);
       }
@@ -110,13 +114,15 @@ export class UserCartComponent implements OnInit {
     removeFromArray(this.upcomingVendorOrders);
     removeFromArray(this.previousVendorOrders);
 
-    console.log(`Order with ID ${orderId} has been cancelled and removed from all arrays.`);
+    console.log(
+      `Order with ID ${orderId} has been cancelled and removed from all arrays.`
+    );
   }
 
   placePlannerOrder(orderId: string): void {
     // Find the planner order by orderId
-    const order = this.plannerOrders.find(order => order.orderId === orderId);
-  
+    const order = this.plannerOrders.find((order) => order.orderId === orderId);
+
     if (order) {
       this.router.navigate(['/orderprev'], {
         queryParams: {
@@ -124,8 +130,8 @@ export class UserCartComponent implements OnInit {
           isPlannerOrder: 'true', // Specify it's a planner order
           plannerName: order.plannerName || '', // Pass planner name
           tier: order.tier || '', // Pass tier information
-          plannerFare: order.fare || '' // Pass planner fare
-        }
+          plannerFare: order.fare || '', // Pass planner fare
+        },
       });
       console.log('Navigated to orderprev with planner order details:', order);
     } else {
@@ -133,11 +139,11 @@ export class UserCartComponent implements OnInit {
     }
     this.dialog.closeAll();
   }
-  
+
   placeVendorOrder(orderId: string): void {
     // Find the vendor order by orderId
-    const order = this.vendorOrders.find(order => order.orderId === orderId);
-  
+    const order = this.vendorOrders.find((order) => order.orderId === orderId);
+
     if (order) {
       this.router.navigate(['/orderprev'], {
         queryParams: {
@@ -145,8 +151,8 @@ export class UserCartComponent implements OnInit {
           isVendorOrder: 'true', // Specify it's a vendor order
           plannerName: order.vendorName || '', // Pass vendor name as plannerName for consistency
           tier: '', // No tier for vendor orders
-          plannerFare: order.vendorFare || '' // Pass vendor fare
-        }
+          plannerFare: order.vendorFare || '', // Pass vendor fare
+        },
       });
       console.log('Navigated to orderprev with vendor order details:', order);
     } else {
@@ -154,6 +160,4 @@ export class UserCartComponent implements OnInit {
     }
     this.dialog.closeAll();
   }
-  
-
 }
