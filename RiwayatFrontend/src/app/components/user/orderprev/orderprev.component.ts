@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { PaymentDialogComponent } from '../payment-dialog/payment-dialog.component';
 import { Location } from '@angular/common';
+import { DateFormatterPipe } from '../../../date-formatter.pipe';
 
 @Component({
   selector: 'app-orderprev',
@@ -133,7 +134,7 @@ export class OrderprevComponent implements OnInit {
     
         Order Details:
         Event Type: ${this.orderDetails.eventType || 'N/A'}
-        Event Date: ${this.orderDetails.eventDate || 'N/A'}
+        Event Date: ${this.orderDetails.eventDate || DateFormatterPipe || 'N/A'}
         Event Time: ${this.orderDetails.eventTime || 'N/A'}
         Event Description: ${this.orderDetails.eventDescription || 'Not Provided'}
   
@@ -178,7 +179,7 @@ export class OrderprevComponent implements OnInit {
         Serving Details:
         Location Type: ${this.orderDetails.servingDetails?.serviceLocationType || 'N/A'}
         Custom Address: ${this.orderDetails.servingDetails?.customAddress || 'Not Needed'}
-        Date: ${this.orderDetails.servingDetails?.serviceDate || 'N/A'}
+        Date: ${this.orderDetails.servingDetails?.serviceDate || DateFormatterPipe || 'N/A'}
         Time: ${this.orderDetails.servingDetails?.serviceTime || 'N/A'}
   
         Instructions:
@@ -197,7 +198,7 @@ export class OrderprevComponent implements OnInit {
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = 'invoice.txt';
+    link.download = `${this.orderDetails.vendorName || this.plannerName || 'Someone'}'s invoice.txt`;
     link.click();
   
     // Clean up the object URL
