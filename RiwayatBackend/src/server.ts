@@ -6,6 +6,7 @@ import { team } from './services/team/teamService';
 import { vendor } from './services/vendors/vendorService';
 import { cart } from './services/cart/cartService';
 import { orders } from './services/orders/orderService';
+import { planner } from './services/planner/plannerService'
 
 
 const app = express();
@@ -57,6 +58,10 @@ app.get("/api/cart", (request, response) => {
 //API to get Order Data
 app.get("/api/orders", (request, response) => {
     response.json(orders); // Send JSON data as a response
+});
+//API to get Planner Data
+app.get("/api/planner", (request, response) => {
+    response.json(planner); // Send JSON data as a response
 });
 
 

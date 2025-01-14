@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Harvey Specter",
+    "bio": "Hot-Shot Lawyer who likes to plan events nowadays, best for Law-related Events",
+    "specialty": "Corporate Events",
+    "experience": 50,
+    "plannerFare": "₹10,000",
+    "tiers": [
+      {
+        "name": "Basic",
+        "fare": "$1000",
+        "services": "Venue & Catering",
+        "image": "assets/basictier.png"
+      },
+      {
+        "name": "Standard",
+        "fare": "$1900",
+        "services": "Venue, Catering & Decorations",
+        "image": "assets/stdtier.png"
+      },
+      {
+        "name": "Premium",
+        "fare": "$2500",
+        "services": "Venue, Catering, Decorations, Entertainment & Waiter/Staff",
+        "image": "assets/premtier.png"
+      },
+      {
+        "name": "Custom",
+        "fare": "Depends on the Services",
+        "services": "Customize with any of the services",
+        "image": "assets/customtier.png"
+      }
+    ],
+    "image": "assets/harvey.jpg",
+    "type": "planner"
+  },
+  {
+    "name": "Dr. House",
+    "bio": "Crazy but Genius Doctor, Side Musician, Faked his Death for his friend, best suited for Parties and Fun Events",
+    "specialty": "Parties & Birthdays",
+    "experience": 30,
+    "plannerFare": "₹10,000",
+    "tiers": [
+      {
+        "name": "Basic",
+        "fare": "$1000",
+        "services": "Venue & Catering",
+        "image": "assets/basictier.png"
+      },
+      {
+        "name": "Standard",
+        "fare": "$1900",
+        "services": "Venue, Catering & Decorations",
+        "image": "assets/stdtier.png"
+      },
+      {
+        "name": "Premium",
+        "fare": "$2500",
+        "services": "Venue, Catering, Decorations, Entertainment & Waiter/Staff",
+        "image": "assets/premtier.png"
+      },
+      {
+        "name": "Custom",
+        "fare": "Depends on the Services",
+        "services": "Customize with any of the services",
+        "image": "assets/customtier.png"
+      }
+    ],
+    "image": "assets/dr-house2.jpg",
+    "type": "planner"
+  },
+  {
+    "name": "Donna",
+    "bio": "Amazing and Confident, can do Anything because She is Donna!!",
+    "specialty": "Creative Events, Themed Parties",
+    "experience": 40,
+    "plannerFare": "₹10,000",
+    "tiers": [
+      {
+        "name": "Basic",
+        "fare": "$1000",
+        "services": "Venue & Catering",
+        "image": "assets/basictier.png"
+      },
+      {
+        "name": "Standard",
+        "fare": "$1900",
+        "services": "Venue, Catering & Decorations",
+        "image": "assets/stdtier.png"
+      },
+      {
+        "name": "Premium",
+        "fare": "$2500",
+        "services": "Venue, Catering, Decorations, Entertainment & Waiter/Staff",
+        "image": "assets/premtier.png"
+      },
+      {
+        "name": "Custom",
+        "fare": "Depends on the Services",
+        "services": "Customize with any of the services",
+        "image": "assets/customtier.png"
+      }
+    ],
+    "image": "assets/donna.jpg",
+    "type": "planner"
+  }
+]
