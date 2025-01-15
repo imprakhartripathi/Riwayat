@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
+// User Components
 import { HomePageComponent } from './components/home-page/home-page.component';
 import { UserDashboardComponent } from './components/user/user-dashboard/user-dashboard.component';
 import { AuthenticatorComponent } from './authenticator/authenticator.component';
-import { UserProfileComponent } from './components/user/user-profile/user-profile.component';
-import { AdminProfileComponent } from './components/admin-planner/admin-profile/admin-profile.component';
 import { UserSearchLandingComponent } from './components/user/user-search-landing/user-search-landing.component';
 import { OfferLandingComponent } from './components/user/offer-landing/offer-landing.component';
 import { PlannerProfileComponent } from './components/user/planner-profile/planner-profile.component';
@@ -16,8 +14,33 @@ import { PaymentInProgressComponent } from './components/user/payment-in-progres
 import { SupportComponent } from './components/support/support.component';
 import { OrderDisplayComponent } from './components/user/order-display/order-display.component';
 import { PaymentFailureComponent } from './components/user/payment-failure/payment-failure.component';
+// Admin/Planner Components
+import { AdminProfileComponent } from './components/admin-planner/admin-profile/admin-profile.component';
+import { AdminDashboardComponent } from './components/admin-planner/admin-dashboard/admin-dashboard.component';
+
+
 
 const routes: Routes = [
+  // General Paths
+
+  {
+    path: '',
+    component: AuthenticatorComponent,
+    data: { title: 'Riwayat - Authenticator' },
+  },
+  {
+    path: 'showcase',
+    component: HomePageComponent,
+    data: { title: 'Riwayat - Showcase' },
+  },
+  {
+    path: 'support',
+    component: SupportComponent,
+    data: { title: 'Riwayat - Support & Team' },
+  },
+
+  // User Paths
+
   {
     path: '',
     component: AuthenticatorComponent,
@@ -32,11 +55,6 @@ const routes: Routes = [
     path: 'showcase',
     component: HomePageComponent,
     data: { title: 'Riwayat - Showcase' },
-  },
-  {
-    path: 'adminprofile',
-    component: AdminProfileComponent,
-    data: { title: 'Riwayat - Admin Profile' },
   },
   {
     path: 'search/:term',
@@ -87,6 +105,19 @@ const routes: Routes = [
     path: 'payfail',
     component: PaymentFailureComponent,
     data: { title: 'Riwayat - Payment Failed' },
+  },
+
+  // Admin/Planner Paths
+
+  {
+    path: 'adminprofile',
+    component: AdminProfileComponent,
+    data: { title: 'Riwayat - Admin Profile' },
+  },
+  {
+    path: 'planner',
+    component: AdminDashboardComponent,
+    data: { title: 'Riwayat - Planner Dashboard' },
   },
 ];
 
