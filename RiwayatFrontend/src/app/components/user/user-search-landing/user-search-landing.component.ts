@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
-import { VendorJsonService, Vendor } from '../../../vendor-json.service';
-import { PlannerJsonService, Planner } from '../../../planner-json.service';
+import { VendorJsonService, Vendor } from '../../../services/vendor-json/vendor-json.service';
+import { PlannerJsonService, Planner } from '../../../services/planner-json/planner-json.service';
 
 
 type SearchResult = Vendor | Planner;

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { AuthService } from '../../../auth.service'; // Import AuthService
+import { AuthService } from '../../../services/auth/auth.service'; // Import AuthService
 
 @Component({
   selector: 'app-user-notification',

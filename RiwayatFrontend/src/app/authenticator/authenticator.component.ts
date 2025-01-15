@@ -2,8 +2,8 @@ import { Component, Optional } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { DevService } from '../dev-service.service';
-import { AuthService } from '../auth.service'; // Import AuthService
+import { DevService } from '../services/dev-dervice/dev-service.service';
+import { AuthService } from '../services/auth/auth.service'; // Import AuthService
 import { HttpClient } from '@angular/common/http';
 
 @Component({

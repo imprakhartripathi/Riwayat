@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
-import { VendorJsonService } from '../../../vendor-json.service';
+import { VendorJsonService } from '../../../services/vendor-json/vendor-json.service';
 
 interface Vendor {
   type: 'vendor';

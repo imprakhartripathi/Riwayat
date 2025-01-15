@@ -5,7 +5,7 @@ import {
   VendorJsonService,
   Vendor,
   Service,
-} from '../../../vendor-json.service';
+} from '../../../services/vendor-json/vendor-json.service';
 
 @Component({
   selector: 'app-vendor-profile',

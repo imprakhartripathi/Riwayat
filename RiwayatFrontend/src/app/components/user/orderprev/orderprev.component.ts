@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { PaymentDialogComponent } from '../payment-dialog/payment-dialog.component';
 import { Location } from '@angular/common';
-import { DateFormatterPipe } from '../../../date-formatter.pipe';
+import { DateFormatterPipe } from '../../../pipes/date-formatter/date-formatter.pipe';
 
 @Component({
   selector: 'app-orderprev',

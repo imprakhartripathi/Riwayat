@@ -1,7 +1,7 @@
 import { Component, HostListener, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { AuthService } from '../../../auth.service'; // Import AuthService
+import { AuthService } from '../../../services/auth/auth.service'; // Import AuthService
 import { UserNotificationComponent } from '../user-notification/user-notification.component';
 import { UserCartComponent } from '../user-cart/user-cart.component';
 import { UserOrdersComponent } from '../user-orders/user-orders.component';

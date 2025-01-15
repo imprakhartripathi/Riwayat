@@ -1,6 +1,6 @@
 // support.component.ts
 import { Component, OnInit } from '@angular/core';
-import { DevService } from '../../dev-service.service';
+import { DevService } from '../../services/dev-dervice/dev-service.service';
 
 @Component({
   selector: 'app-support',

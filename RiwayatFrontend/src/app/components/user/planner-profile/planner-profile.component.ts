@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { PlannerJsonService, Planner } from '../../../planner-json.service';
+import { PlannerJsonService, Planner } from '../../../services/planner-json/planner-json.service';
 
 @Component({
   selector: 'app-planner-profile',

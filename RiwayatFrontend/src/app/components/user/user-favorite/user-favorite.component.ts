@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { AuthService } from '../../../auth.service';
-import { VendorJsonService } from '../../../vendor-json.service';
+import { AuthService } from '../../../services/auth/auth.service';
+import { VendorJsonService } from '../../../services/vendor-json/vendor-json.service';
 
 @Component({
   selector: 'app-user-favorite',
