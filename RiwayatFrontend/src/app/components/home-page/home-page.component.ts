@@ -50,12 +50,13 @@ export class HomePageComponent {
   }
 
   openLoginDialog() {
-    this.dialog.open(AuthenticatorComponent, {
-      width: '1000px', // Set the width of the dialog
-      height: '500px', // Set the height of the dialog
-      panelClass: 'custom-dialog-container', // Apply a custom CSS class
-      data: {} // Pass any data you want to share with the component
-    });
+    // this.dialog.open(AuthenticatorComponent, {
+    //   width: '1000px', // Set the width of the dialog
+    //   height: '500px', // Set the height of the dialog
+    //   panelClass: 'custom-dialog-container', // Apply a custom CSS class
+    //   data: {} // Pass any data you want to share with the component
+    // });
+    this.router.navigate(['/'])
   }
   
 }

@@ -4,6 +4,10 @@
   align-items: center;
   height: 100vh;
   background-color: black;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .auth-dialog {
@@ -12,6 +16,10 @@
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   width: 1000px;
   height: 500px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .auth-left {
@@ -23,6 +31,10 @@
   width: 50%;
   text-align: center;
   border-right: 1px solid #e0e0e0;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .auth-right {
@@ -32,6 +44,10 @@
   padding: 40px;
   background-color: white;
   width: 50%;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .logo {
@@ -97,4 +113,128 @@ button[type="submit"] {
   background-color: black;
   color: #cea660;
   font-size: 16px;
+}
+
+.parent{
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .parent{
+    display: block;
+  }
+  .auth-container-res {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+}
+
+.auth-dialog-res {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  width: 100%;
+  height: auto;
+}
+
+.auth-left-res {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  padding: 20px;
+  background-color: black;
+  text-align: center;
+}
+
+.auth-right-res {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  padding-top: 40px;
+  height: 100%;
+  background-color: white;
+   border-radius: 16px;
+}
+
+// .spacer{
+//   height: calc(100vh - inherit)
+// }
+
+.logo-c {
+  justify-content: center;
+}
+
+.logo-res {
+  width: 150px;
+  margin-left: 5px;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 40px;
+  color: #cea660;
+}
+
+.switch-btn-res,
+.showcase-btn-res {
+  margin-top: 20px;
+  background-color: #cea660;
+  color: black;
+  width: 100%;
+  height: 80px;
+
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 40px;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+
+  .mat-form-field-flex {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 4px;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: black;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    color: black;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline-end,
+  .mat-form-field-appearance-outline .mat-form-field-outline-start {
+    border-color: black;
+  }
+}
+
+.mat-input-element {
+  background-color: white;
+  color: black;
+}
+
+button[type="submit"] {
+  width: 100%;
+  height: 45px;
+  background-color: black;
+  color: #cea660;
+  font-size: 16px;
+}
+
 }
