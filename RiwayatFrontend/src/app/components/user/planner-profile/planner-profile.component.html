@@ -26,6 +26,19 @@
       </mat-grid-tile>
     </mat-grid-list>
   </mat-card>
+  <mat-card class="tiers-res">
+    <h3>Tier Plans</h3>
+    <mat-divider></mat-divider>
+    <mat-grid-list cols="1" rowHeight="250px" gutterSize="8px">
+      <mat-grid-tile *ngFor="let tier of selectedPlanner.tiers" (click)="selectTier(tier)">
+        <mat-card class="tier-card" [ngClass]="{'selected': selectedTier?.name === tier.name}">
+          <div class="tier-img">
+            <img [src]="tier.image" [alt]="tier.name">
+          </div>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card>
 
   <mat-card class="questionnaire" *ngIf="selectedTier">
     <h3>{{ selectedTier.name }} Tier Questionnaire</h3>
@@ -154,7 +167,7 @@
     </form>
   </mat-card>
 
-  <button mat-raised-button color="primary" [disabled]="!tierForm.valid" (click)="confirmOrder()">
+  <button class="cmf-btn" mat-raised-button color="primary" [disabled]="!tierForm.valid" (click)="confirmOrder()">
     Confirm Order
   </button>
 </div>
