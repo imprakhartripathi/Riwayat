@@ -5,11 +5,22 @@
     padding: 20px;
     width: 97%;
 
+    @media (max-width: 786px) {
+      width: 100%;
+      padding: 0%;
+    }
+
     mat-card {
       width: 100%;
       margin: 20px 0;
       padding: 20px;
       box-sizing: border-box;
+
+      @media (max-width: 786px) {
+      width: auto;
+      margin: 0;
+      padding: 10px;
+      }
     }
 
     .profile-header {
@@ -48,6 +59,23 @@
       }
     }
 
+    .stepper {
+      @media (max-width: 786px) {
+        display: none;
+      }
+    }
+
+    .stepper-res{
+      display: none;
+      @media (max-width: 786px) {
+        display: contents;
+        justify-content: left;
+        mat-vertical-stepper{
+          width: 100vw;
+        }
+      }
+    }
+
     .services-section {
       width: 100%;
       margin-top: 20px;
@@ -58,10 +86,19 @@
         text-align: center;
       }
 
+      @media (max-width: 768px) {
+          width: auto;
+          justify-content: left;
+        }
+
       .services-list {
         display: grid;
         gap: 15px;
         justify-content: center;
+
+        @media (max-width: 768px) {
+          margin-bottom: 12px;
+        }
       }
 
       .service-card {
@@ -70,6 +107,13 @@
         align-items: flex-start;
         width: 90vw;
         padding: 15px;
+
+        @media (max-width: 768px) {
+          width: 80vw;
+          height: 140px;
+          justify-content: center;
+          margin-right: 10px;
+        }
       }
 
       .service-content {
@@ -125,6 +169,10 @@
 }
 
 .form {
+  @media (max-width: 768px) {
+    width: 80vw;
+  }
+
   mat-form-field {
     display: block;
   }
