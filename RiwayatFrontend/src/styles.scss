@@ -47,8 +47,92 @@ body { margin: 0; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Seg
     height: 500px;
 
     @media (max-width: 768px) {
-      width: 90%;
+      width: 95%;
       height: auto;
+    }
+  }
+
+  .custom-profile-container {
+    border-radius: 15px; /* Adjust the radius as needed */
+    overflow: hidden; /* Ensure the content does not overflow the rounded corners */
+    width: 1000px;
+    height: auto;
+
+    @media (max-width: 768px) {
+      width: 95%;
+      height: auto;
+    }
+  }
+
+  .custom-settings-container {
+    border-radius: 15px; /* Adjust the radius as needed */
+    overflow: hidden; /* Ensure the content does not overflow the rounded corners */
+    width: 1000px;
+    height: auto;
+
+    @media (max-width: 768px) {
+      width: 95%;
+      height: auto;
+    }
+  }
+
+  .custom-cart-container {
+    border-radius: 15px; /* Adjust the radius as needed */
+    overflow: hidden; /* Ensure the content does not overflow the rounded corners */
+    width: 1000px;
+    height: 500px;
+
+    @media (max-width: 768px) {
+      width: 95%;
+      height: 80%;
+    }
+  }
+
+  .custom-orders-container {
+    border-radius: 15px; /* Adjust the radius as needed */
+    overflow: hidden; /* Ensure the content does not overflow the rounded corners */
+    width: 1000px;
+    height: 500px;
+
+    @media (max-width: 768px) {
+      width: 95%;
+      height: 80%;
+    }
+  }
+
+  .custom-notification-container {
+    border-radius: 15px; /* Adjust the radius as needed */
+    overflow: hidden; /* Ensure the content does not overflow the rounded corners */
+    width: 1000px;
+    height: 500px;
+
+    @media (max-width: 768px) {
+      width: 95%;
+      height: 80%;
+    }
+  }
+
+  .custom-search-container {
+    border-radius: 15px; /* Adjust the radius as needed */
+    overflow: hidden; /* Ensure the content does not overflow the rounded corners */
+    width: 1000px;
+    height: auto;
+
+    @media (max-width: 768px) {
+      width: 95%;
+      height: 80%;
+    }
+  }
+
+  .custom-favorite-container {
+    border-radius: 15px; /* Adjust the radius as needed */
+    overflow: hidden; /* Ensure the content does not overflow the rounded corners */
+    width: 1000px;
+    height: 500px;
+
+    @media (max-width: 768px) {
+      width: 95%;
+      height: 80%;
     }
   }
   

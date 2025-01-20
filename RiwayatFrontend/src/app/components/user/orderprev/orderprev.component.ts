@@ -121,8 +121,19 @@ export class OrderprevComponent implements OnInit {
   }
 
   downloadBill(): void {
+    // Instantiate the DateFormatterPipe
+    const dateFormatter = new DateFormatterPipe();
+
+    // Use the pipe programmatically to format dates
+    const eventDate = this.orderDetails.eventDate
+      ? dateFormatter.transform(this.orderDetails.eventDate)
+      : 'N/A';
+    const serviceDate = this.orderDetails.servingDetails?.serviceDate
+      ? dateFormatter.transform(this.orderDetails.servingDetails.serviceDate)
+      : 'N/A';
+
     let billContent = 'Order Invoice\n-------------\n';
-  
+
     if (this.isPlannerOrder) {
       // Generate bill for planner
       billContent += `
@@ -134,9 +145,11 @@ export class OrderprevComponent implements OnInit {
     
         Order Details:
         Event Type: ${this.orderDetails.eventType || 'N/A'}
-        Event Date: ${this.orderDetails.eventDate || DateFormatterPipe || 'N/A'}
+        Event Date: ${eventDate || 'N/A'}
         Event Time: ${this.orderDetails.eventTime || 'N/A'}
-        Event Description: ${this.orderDetails.eventDescription || 'Not Provided'}
+        Event Description: ${
+          this.orderDetails.eventDescription || 'Not Provided'
+        }
   
         Addons:
         Free Snacks = ${this.orderDetails.addons?.freeSnacks}
@@ -164,43 +177,59 @@ export class OrderprevComponent implements OnInit {
       `;
       if (this.orderDetails.services?.length) {
         this.orderDetails.services.forEach((service: any) => {
-          billContent += `- ${service.name || 'Unnamed Service'}: ${service.description || 'No description provided'}\n      `;
+          billContent += `- ${service.name || 'Unnamed Service'}: ${
+            service.description || 'No description provided'
+          }\n      `;
         });
       } else {
         billContent += 'No services availed.\n';
       }
-  
+
       billContent += `
         Coordinator Details:
         Name: ${this.orderDetails.coordinatorDetails?.coordinatorName || 'N/A'}
-        Phone: ${this.orderDetails.coordinatorDetails?.coordinatorPhone || 'N/A'}
-        Alternative Phone: ${this.orderDetails.coordinatorDetails?.coordinatorAltPhone || 'Not Provided'}
+        Phone: ${
+          this.orderDetails.coordinatorDetails?.coordinatorPhone || 'N/A'
+        }
+        Alternative Phone: ${
+          this.orderDetails.coordinatorDetails?.coordinatorAltPhone ||
+          'Not Provided'
+        }
   
         Serving Details:
-        Location Type: ${this.orderDetails.servingDetails?.serviceLocationType || 'N/A'}
-        Custom Address: ${this.orderDetails.servingDetails?.customAddress || 'Not Needed'}
-        Date: ${this.orderDetails.servingDetails?.serviceDate || DateFormatterPipe || 'N/A'}
+        Location Type: ${
+          this.orderDetails.servingDetails?.serviceLocationType || 'N/A'
+        }
+        Custom Address: ${
+          this.orderDetails.servingDetails?.customAddress || 'Not Needed'
+        }
+        Date: ${serviceDate || 'N/A'}
         Time: ${this.orderDetails.servingDetails?.serviceTime || 'N/A'}
   
         Instructions:
-        ${this.orderDetails.servingDetails?.serviceInstructions || 'No Instructions'}
+        ${
+          this.orderDetails.servingDetails?.serviceInstructions ||
+          'No Instructions'
+        }
   
         --------------------------------
       `;
     } else {
       billContent += 'No valid order details provided.\n';
     }
-  
+
     billContent += '\nThank you for using our services!';
-  
+
     // Create a Blob from the bill content and trigger the download
     const blob = new Blob([billContent], { type: 'text/plain' });
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `${this.orderDetails.vendorName || this.plannerName || 'Someone'}'s invoice.txt`;
+    link.download = `${
+      this.orderDetails.vendorName || this.plannerName || 'Someone'
+    }'s invoice.txt`;
     link.click();
-  
+
     // Clean up the object URL
     window.URL.revokeObjectURL(url);
   }

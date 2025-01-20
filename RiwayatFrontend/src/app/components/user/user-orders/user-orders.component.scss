@@ -21,6 +21,11 @@
       background-color: white;
       border-radius: 5px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      
+      @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+      }
     }
   
     mat-card {
@@ -53,6 +58,10 @@
 
   .btn-div {
     margin-left: 350px;
+
+    @media (max-width: 768px) {
+      margin-left: 0;
+    }
     .redirect-btn {
       color: black;
     }

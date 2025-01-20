@@ -55,9 +55,9 @@ export class UserNavbarComponent implements OnDestroy {
       this.searchDialogRef = null;
     } else {
       this.searchDialogRef = this.dialog.open(UserSearchDialogComponent, {
-        width: '1000px',
-        height: 'auto',
-        panelClass: 'custom-dialog-container',
+        // width: '1000px',
+        // height: 'auto',
+        panelClass: 'custom-search-container',
       });
       this.searchDialogRef.afterClosed().subscribe(() => this.searchDialogRef = null);
     }
@@ -66,9 +66,9 @@ export class UserNavbarComponent implements OnDestroy {
   openNotificationDialog(): void {
     if (!this.notificationDialogRef) {
       this.notificationDialogRef = this.dialog.open(UserNotificationComponent, {
-        width: '1000px',
-        height: '500px',
-        panelClass: 'custom-dialog-container',
+        // width: '1000px',
+        // height: '500px',
+        panelClass: 'custom-notification-container',
       });
       this.notificationDialogRef.afterClosed().subscribe(() => this.notificationDialogRef = null);
     }
@@ -77,9 +77,9 @@ export class UserNavbarComponent implements OnDestroy {
   openCartDialog(): void {
     if (!this.cartDialogRef) {
       this.cartDialogRef = this.dialog.open(UserCartComponent, {
-        width: '1000px',
-        height: '500px',
-        panelClass: 'custom-dialog-container',
+        // width: '1000px',
+        // height: '90%',
+        panelClass: 'custom-cart-container',
       });
       this.cartDialogRef.afterClosed().subscribe(() => this.cartDialogRef = null);
     }
@@ -88,9 +88,9 @@ export class UserNavbarComponent implements OnDestroy {
   openOrdersDialog(): void {
     if (!this.ordersDialogRef) {
       this.ordersDialogRef = this.dialog.open(UserOrdersComponent, {
-        width: '1000px',
-        height: '500px',
-        panelClass: 'custom-dialog-container',
+        // width: '1000px',
+        // height: '90%',
+        panelClass: 'custom-orders-container',
       });
       this.ordersDialogRef.afterClosed().subscribe(() => this.ordersDialogRef = null);
     }
@@ -99,9 +99,9 @@ export class UserNavbarComponent implements OnDestroy {
   openFavoriteDialog(): void {
     if (!this.favoriteDialogRef) {
       this.favoriteDialogRef = this.dialog.open(UserFavoriteComponent, {
-        width: '1000px',
-        height: '500px',
-        panelClass: 'custom-dialog-container',
+        // width: '1000px',
+        // height: '90%',
+        panelClass: 'custom-favorite-container',
       });
       this.favoriteDialogRef.afterClosed().subscribe(() => this.favoriteDialogRef = null);
     }
@@ -110,9 +110,9 @@ export class UserNavbarComponent implements OnDestroy {
   openSettingsDialog(): void {
     if (!this.settingsDialogRef) {
       this.settingsDialogRef = this.dialog.open(UserSettingsComponent, {
-        width: '1000px',
-        height: 'auto',
-        panelClass: 'custom-dialog-container',
+        // width: '1000px',
+        // height: '90%',
+        panelClass: 'custom-settings-container',
       });
       this.settingsDialogRef.afterClosed().subscribe(() => this.settingsDialogRef = null);
     }
@@ -121,9 +121,9 @@ export class UserNavbarComponent implements OnDestroy {
   goToUserProfile(): void {
     if (!this.userProfileDialogRef) {
       this.userProfileDialogRef = this.dialog.open(UserProfileComponent, {
-        width: '1000px',
-        height: 'auto',
-        panelClass: 'custom-dialog-container',
+        // width: '1000px',
+        // height: 'auto',
+        panelClass: 'custom-profile-container',
       });
       this.userProfileDialogRef.afterClosed().subscribe(() => this.userProfileDialogRef = null);
     }
