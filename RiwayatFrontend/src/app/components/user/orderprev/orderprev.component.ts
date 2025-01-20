@@ -145,7 +145,7 @@ export class OrderprevComponent implements OnInit {
     
         Order Details:
         Event Type: ${this.orderDetails.eventType || 'N/A'}
-        Event Date: ${eventDate || 'N/A'}
+        Event Date: ${eventDate}
         Event Time: ${this.orderDetails.eventTime || 'N/A'}
         Event Description: ${
           this.orderDetails.eventDescription || 'Not Provided'
@@ -203,7 +203,7 @@ export class OrderprevComponent implements OnInit {
         Custom Address: ${
           this.orderDetails.servingDetails?.customAddress || 'Not Needed'
         }
-        Date: ${serviceDate || 'N/A'}
+        Date: ${serviceDate}
         Time: ${this.orderDetails.servingDetails?.serviceTime || 'N/A'}
   
         Instructions:
