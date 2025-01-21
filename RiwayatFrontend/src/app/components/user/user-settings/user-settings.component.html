@@ -1,51 +1,71 @@
 <div class="settings-container">
-    <h2>User Settings</h2>
-  
-    <mat-card>
-      <mat-card-content>
-        <!-- Notification Settings -->
-        <div class="setting-item">
-          <mat-label>Notifications:</mat-label>
-          <mat-slide-toggle 
-            [(ngModel)]="settings.notifications" 
-            (change)="markAsUpdated()">
-            {{ settings.notifications ? 'On' : 'Off' }}
-          </mat-slide-toggle>
-        </div>
-  
-        <!-- Delivery Addresses -->
-        <div class="setting-item">
-          <mat-label>Home Address:</mat-label>
-          <mat-form-field appearance="outline">
-            <input matInput [(ngModel)]="profileData.addressHome" (input)="markAsUpdated()" />
-          </mat-form-field>
-        </div>
-  
-        <div class="setting-item">
-          <mat-label>Office Address:</mat-label>
-          <mat-form-field appearance="outline">
-            <input matInput [(ngModel)]="profileData.addressOffice" (input)="markAsUpdated()" />
-          </mat-form-field>
-        </div>
-  
-        <!-- Latest Offers Toggle -->
-        <div class="setting-item">
-          <mat-label>Get Latest Offers:</mat-label>
-          <mat-slide-toggle 
-            [(ngModel)]="settings.latestOffers" 
-            (change)="markAsUpdated()">
-            {{ settings.latestOffers ? 'Yes' : 'No' }}
-          </mat-slide-toggle>
-        </div>
-  
-        <!-- Save Settings Button -->
-        <div class="button-container">
-          <button mat-raised-button color="primary" (click)="saveSettings()" [disabled]="!isUpdated">Save Settings</button>
-        </div>
-  
-        <!-- Status Message -->
-        <div *ngIf="message" class="status-message">{{ message }}</div>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  
+  <h2>User Settings</h2>
+
+  <mat-card>
+    <mat-card-content>
+      <!-- Notification Settings -->
+      <div class="setting-item">
+        <mat-label>Notifications:</mat-label>
+        <mat-slide-toggle
+          [disabled]="editDisabled"
+          [(ngModel)]="settings.notifications"
+          (change)="markAsUpdated()"
+        >
+          {{ settings.notifications ? "On" : "Off" }}
+        </mat-slide-toggle>
+      </div>
+
+      <!-- Delivery Addresses -->
+      <div class="setting-item">
+        <mat-label>Home Address:</mat-label>
+        <mat-form-field appearance="outline">
+          <input
+            matInput
+            [disabled]="editDisabled"
+            [(ngModel)]="profileData.addressHome"
+            (input)="markAsUpdated()"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="setting-item">
+        <mat-label>Office Address:</mat-label>
+        <mat-form-field appearance="outline">
+          <input
+            matInput
+            [disabled]="editDisabled"
+            [(ngModel)]="profileData.addressOffice"
+            (input)="markAsUpdated()"
+          />
+        </mat-form-field>
+      </div>
+
+      <!-- Latest Offers Toggle -->
+      <div class="setting-item">
+        <mat-label>Get Latest Offers:</mat-label>
+        <mat-slide-toggle
+          [disabled]="editDisabled"
+          [(ngModel)]="settings.latestOffers"
+          (change)="markAsUpdated()"
+        >
+          {{ settings.latestOffers ? "Yes" : "No" }}
+        </mat-slide-toggle>
+      </div>
+
+      <!-- Save Settings Button -->
+      <div class="button-container">
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="saveSettings()"
+          [disabled]="!isUpdated"
+        >
+          Save Settings
+        </button>
+      </div>
+
+      <!-- Status Message -->
+      <div *ngIf="message" class="status-message">{{ message }}</div>
+    </mat-card-content>
+  </mat-card>
+</div>

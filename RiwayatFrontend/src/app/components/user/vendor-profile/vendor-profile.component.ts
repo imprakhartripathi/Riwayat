@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import {
-  VendorJsonService,
-  Vendor,
-  Service,
-} from '../../../services/vendor-json/vendor-json.service';
+import { VendorJsonService, Vendor, Service } from '../../../services/vendor-json/vendor-json.service';
+import { AuthService } from '../../../services/auth/auth.service';
 
 @Component({
   selector: 'app-vendor-profile',
@@ -19,11 +16,13 @@ export class VendorProfileComponent implements OnInit {
   coordinatorForm: FormGroup;
   allVendors: Vendor[] = [];
   selectedServices: Service[] = []; // Array to store selected services
+  profileData: any;
 
   constructor(
     private fb: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
+    private authService: AuthService,
     private vendorService: VendorJsonService // Injecting the service
   ) {
     this.serviceForm = this.fb.group({
@@ -69,6 +68,9 @@ export class VendorProfileComponent implements OnInit {
         console.error('Error fetching vendors:', error);
       }
     );
+    this.profileData = this.authService.getCurrentUser();
+    console.log("Home: ", this.profileData.addressHome, " and Office: ", this.profileData.addressOffice)
+    console.log("Name: ", this.profileData.name, " and No. ", this.profileData.phone)
   }
 
   onSubmit(): void {

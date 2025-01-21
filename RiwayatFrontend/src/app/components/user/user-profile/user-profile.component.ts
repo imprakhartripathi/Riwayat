@@ -7,21 +7,30 @@ import { PaymentDialogComponent } from '../payment-dialog/payment-dialog.compone
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
-  styleUrls: ['./user-profile.component.scss']
+  styleUrls: ['./user-profile.component.scss'],
 })
 export class UserProfileComponent implements OnInit {
   profileData: any;
   profileImage: string | ArrayBuffer | null = null;
   isEditing: boolean = false;
   editedProfileData: any;
+  editDisabled: boolean = false;
 
-  constructor(private router: Router, public dialog: MatDialog, private authService: AuthService) {}
+  constructor(
+    private router: Router,
+    public dialog: MatDialog,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
     // Fetch logged-in user data from AuthService
     this.profileData = this.authService.getCurrentUser();
     this.editedProfileData = { ...this.profileData };
     this.profileImage = this.profileData?.image || 'assets/user.png'; // Use profile image if available
+
+    if (this.profileData.username === 'guestuser') {
+      this.editDisabled = true;
+    }
   }
 
   onEdit() {
@@ -49,7 +58,7 @@ export class UserProfileComponent implements OnInit {
 
   openPaymentDialog(): void {
     this.dialog.open(PaymentDialogComponent, {
-      width: '400px'
+      width: '400px',
     });
   }
 

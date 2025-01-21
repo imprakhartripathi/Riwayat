@@ -59,8 +59,8 @@
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Where would you like to have this service delivered?</mat-label>
                         <mat-select formControlName="serviceLocationType" placeholder="Select address type">
-                            <mat-option value="Home Address">Home Address</mat-option>
-                            <mat-option value="Office Address">Office Address</mat-option>
+                            <mat-option [value]="profileData.addressHome" >Home Address</mat-option>
+                            <mat-option [value]="profileData.addressOffice" >Office Address</mat-option>
                             <mat-option value="Custom Address">Custom Address</mat-option>
                         </mat-select>
                     </mat-form-field>
@@ -108,13 +108,13 @@
                 <div class="form"  [formGroup]="coordinatorForm">
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Event Coordinator's Name</mat-label>
-                        <input matInput formControlName="coordinatorName" placeholder="Enter the Coordinator's Name" />
+                        <input matInput [(ngModel)]="profileData.name" formControlName="coordinatorName" placeholder="Enter the Coordinator's Name" />
                     </mat-form-field>
 
                     <div class="flex-sa">
                         <mat-form-field class="full-width" appearance="outline">
                             <mat-label>Coordinator's Phone Number</mat-label>
-                            <input matInput formControlName="coordinatorPhone" placeholder="Enter the Coordinator's Phone Number" />
+                            <input matInput [(ngModel)]="profileData.phone" formControlName="coordinatorPhone" placeholder="Enter the Coordinator's Phone Number" />
                         </mat-form-field>
                         <mat-form-field class="full-width" appearance="outline">
                             <mat-label>Alternate Phone Number</mat-label>
