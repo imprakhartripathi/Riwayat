@@ -70,6 +70,7 @@ import { SupportComponent } from './components/support/support.component';
 import { OrderDisplayComponent } from './components/user/order-display/order-display.component';
 import { DateFormatterPipe } from './pipes/date-formatter/date-formatter.pipe';
 import { PaymentFailureComponent } from './components/user/payment-failure/payment-failure.component';
+import { SecondaryNavbarComponent } from './components/secondary-navbar/secondary-navbar.component';
 
 
 
@@ -104,7 +105,8 @@ import { PaymentFailureComponent } from './components/user/payment-failure/payme
     SupportComponent,
     OrderDisplayComponent,
     PaymentFailureComponent,
-    DateFormatterPipe
+    DateFormatterPipe,
+    SecondaryNavbarComponent
   ],
   imports: [
     BrowserModule,
