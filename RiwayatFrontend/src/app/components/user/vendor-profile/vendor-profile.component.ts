@@ -10,6 +10,8 @@ import { AuthService } from '../../../services/auth/auth.service';
   styleUrls: ['./vendor-profile.component.scss'],
 })
 export class VendorProfileComponent implements OnInit {
+  pageTitle: string | undefined = '';
+
   selectedServicesCount = 0;
   selectedVendor: Vendor | undefined;
   serviceForm: FormGroup;
@@ -71,6 +73,8 @@ export class VendorProfileComponent implements OnInit {
     this.profileData = this.authService.getCurrentUser();
     console.log("Home: ", this.profileData.addressHome, " and Office: ", this.profileData.addressOffice)
     console.log("Name: ", this.profileData.name, " and No. ", this.profileData.phone)
+
+    
   }
 
   onSubmit(): void {

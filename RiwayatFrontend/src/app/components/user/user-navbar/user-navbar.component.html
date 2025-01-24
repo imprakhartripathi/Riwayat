@@ -1,4 +1,4 @@
-<mat-toolbar style="color: white; background-color: black;">
+<mat-toolbar style="color: white; background-color: black">
   <div class="logo">
     <button mat-button (click)="goToUserHome()" class="home-btn">
       <img src="../../../assets/riwayat-text-logo.png" alt="Riwayat" />
@@ -6,46 +6,58 @@
   </div>
   <div class="spacer"></div>
   <div class="navbar-icons">
-    <button 
-      mat-icon-button 
-      (click)="toggleSearchDialog()" 
+    <button
+      class="btn"
+      mat-icon-button
+      (click)="toggleSearchDialog()"
       matTooltip="Search"
-      aria-label="Search">
+      aria-label="Search"
+    >
       <mat-icon class="custom-icon">search</mat-icon>
     </button>
-    <button 
-      mat-icon-button 
-      (click)="openNotificationDialog()" 
+    <button
+      class="btn"
+      mat-icon-button
+      (click)="openNotificationDialog()"
       matTooltip="Notifications"
-      aria-label="Notifications">
+      aria-label="Notifications"
+    >
       <mat-icon>notifications</mat-icon>
     </button>
-    <button 
-      mat-icon-button 
-      (click)="openCartDialog()" 
+    <button
+      class="btn"
+      mat-icon-button
+      (click)="openCartDialog()"
       matTooltip="Cart"
-      aria-label="Cart">
+      aria-label="Cart"
+    >
       <mat-icon>shopping_cart</mat-icon>
     </button>
-    <button 
-      mat-icon-button 
-      (click)="openOrdersDialog()" 
+    <button
+      class="btn"
+      mat-icon-button
+      (click)="openOrdersDialog()"
       matTooltip="Orders"
-      aria-label="Orders">
+      aria-label="Orders"
+    >
       <mat-icon>history</mat-icon>
     </button>
-    <button 
-      mat-icon-button 
-      (click)="openFavoriteDialog()" 
+    <button
+      class="btn"
+      mat-icon-button
+      (click)="openFavoriteDialog()"
       matTooltip="Favorites"
-      aria-label="Favorites">
+      aria-label="Favorites"
+    >
       <mat-icon>favorite</mat-icon>
     </button>
-    <button 
-      mat-icon-button 
-      (click)="openSettingsDialog()" 
+    <button
+      class="btn"
+      mat-icon-button
+      (click)="openSettingsDialog()"
       matTooltip="Settings"
-      aria-label="Settings">
+      aria-label="Settings"
+    >
       <mat-icon>settings</mat-icon>
     </button>
     <!-- <button 
@@ -56,65 +68,79 @@
       <mat-icon>contact_support</mat-icon>
     </button> -->
   </div>
-  <button 
-      mat-icon-button 
-      class="support-btn"
-      routerLink="/support" 
-      matTooltip="Support"
-      aria-label="Support">
-      <mat-icon>contact_support</mat-icon>
-    </button>
-  <button 
-    mat-icon-button 
-    (click)="goToUserProfile()" 
+  <button
+    mat-icon-button
+    class="support-btn"
+    routerLink="/support"
+    matTooltip="Support"
+    aria-label="Support"
+  >
+    <mat-icon>contact_support</mat-icon>
+  </button>
+  <button
+    mat-icon-button
+    (click)="goToUserProfile()"
     matTooltip="Profile"
-    aria-label="User Profile">
+    aria-label="User Profile"
+  >
     <img [src]="profileImage" alt="" class="profile-pic" />
   </button>
 </mat-toolbar>
 
 <div class="icon-bar">
   <div class="navbar-icons-responsive">
-    <button 
-      mat-icon-button 
-      (click)="toggleSearchDialog()" 
+    <button
+      class="btn"
+      mat-icon-button
+      (click)="toggleSearchDialog()"
       matTooltip="Search"
-      aria-label="Search">
+      aria-label="Search"
+    >
       <mat-icon class="custom-icon">search</mat-icon>
     </button>
-    <button 
-      mat-icon-button 
-      (click)="openNotificationDialog()" 
+    <button
+      class="btn"
+      mat-icon-button
+      (click)="openNotificationDialog()"
       matTooltip="Notifications"
-      aria-label="Notifications">
+      aria-label="Notifications"
+    >
       <mat-icon>notifications</mat-icon>
     </button>
-    <button 
-      mat-icon-button 
-      (click)="openCartDialog()" 
+    <button
+      class="btn"
+      mat-icon-button
+      (click)="openCartDialog()"
       matTooltip="Cart"
-      aria-label="Cart">
+      aria-label="Cart"
+    >
       <mat-icon>shopping_cart</mat-icon>
     </button>
-    <button 
-      mat-icon-button 
-      (click)="openOrdersDialog()" 
+    <button
+      class="btn"
+      mat-icon-button
+      (click)="openOrdersDialog()"
       matTooltip="Orders"
-      aria-label="Orders">
+      aria-label="Orders"
+    >
       <mat-icon class="custom-icon">history</mat-icon>
     </button>
-    <button 
-      mat-icon-button 
-      (click)="openFavoriteDialog()" 
+    <button
+      class="btn"
+      mat-icon-button
+      (click)="openFavoriteDialog()"
       matTooltip="Favorites"
-      aria-label="Favorites">
+      aria-label="Favorites"
+    >
       <mat-icon>favorite</mat-icon>
     </button>
-    <button 
-      mat-icon-button 
-      (click)="openSettingsDialog()" 
+    <button
+      class="btn"
+      mat-icon-button
+      (click)="openSettingsDialog()"
       matTooltip="Settings"
-      aria-label="Settings">
+      aria-label="Settings"
+    >
       <mat-icon>settings</mat-icon>
     </button>
   </div>

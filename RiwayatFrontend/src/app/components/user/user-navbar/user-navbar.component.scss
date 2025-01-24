@@ -88,3 +88,11 @@ mat-toolbar {
     font-weight: bold;
     font-size: 25.5px;
   }
+
+  .btn,.support-btn {
+    transition: 0.3s;
+    &:hover{
+      scale: 1.5;
+      filter: drop-shadow(white 0 0 10px);
+    }
+  }
