@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { AdminEventCreatorComponent } from '../admin-event-creator/admin-event-creator.component';
 import { AdminNotificationComponent } from '../admin-notification/admin-notification.component';
+import { AdminProfileComponent } from '../admin-profile/admin-profile.component';
 
 
 @Component({
@@ -18,7 +19,12 @@ export class AdminDashboardComponent {
   constructor(private router: Router, public dialog: MatDialog) { }
 
   goToAdminProfile() {
-    this.router.navigate(['/adminprofile']);
+    this.dialog.open(AdminProfileComponent, {
+      width: '1000px', // Set the width of the dialog
+      height: 'auto', // Set the height of the dialog
+      panelClass: 'custom-dialog-container', // Apply a custom CSS class
+      data: {}, // Pass any data you want to share with the component
+    });
   }
 
   openAddEventDialog() {

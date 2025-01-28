@@ -1,68 +1,65 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { AuthService } from '../../../services/auth/auth.service'; // Import AuthService
 
 @Component({
   selector: 'app-admin-profile',
   templateUrl: './admin-profile.component.html',
-  styleUrls: ['./admin-profile.component.scss']
+  styleUrls: ['./admin-profile.component.scss'],
 })
 export class AdminProfileComponent implements OnInit {
-  profileForm!: FormGroup;
-  profilePicUrl: string = 'assets/user.png'; // For storing profile picture URL
-  profit: number = 75; // Example monthly profit percentage
+  profileData: any;
+  profileImage: string | ArrayBuffer | null = null;
+  isEditing: boolean = false;
+  editedProfileData: any;
+  editDisabled: boolean = false;
 
-  admin = {name: 'Krishna Bansal', title: 'Event Planner (Admin)', phone: '+91 0987654321', email: 'imkrishnabansal@gmail.com'}
-
-  constructor(private fb: FormBuilder, private snackBar: MatSnackBar) {}
+  constructor(
+    private router: Router,
+    public dialog: MatDialog,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
-    this.profileForm = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      phoneNumber: ['', Validators.required],
-      address: ['', Validators.required],
-      bio: ['', Validators.maxLength(200)],
-      role: [{ value: 'Admin', disabled: true }],
-      accountBalance: [{ value: 5000, disabled: true }],
-      profilePic: ['']
-    });
+    // Fetch logged-in user data from AuthService
+    this.profileData = this.authService.getCurrentUser();
+    this.editedProfileData = { ...this.profileData };
+    this.profileImage = this.profileData?.image || 'assets/user.png'; // Use profile image if available
 
-    this.loadProfile();
-  }
-
-  loadProfile(): void {
-    const existingProfile = {
-      name: 'Admin User',
-      email: 'admin@example.com',
-      phoneNumber: '1234567890',
-      address: '123 Wedding Lane, Dream City',
-      bio: 'Passionate about planning weddings and making dreams come true.',
-      role: 'Admin',
-      accountBalance: 5000,
-      profilePic: '' // Load the profile picture if available
-    };
-
-    this.profileForm.patchValue(existingProfile);
-  }
-
-  onSubmit(): void {
-    if (this.profileForm.valid) {
-      console.log('Profile updated:', this.profileForm.value);
-      this.snackBar.open('Profile updated successfully!', 'Close', { duration: 3000 });
+    if (this.profileData.username === 'guestuser' || this.profileData.username === 'planner') {
+      this.editDisabled = true;
     }
   }
 
-  // Handle profile picture change
-  onProfilePicChange(event: any): void {
+  onEdit() {
+    this.isEditing = true;
+  }
+
+  onSave() {
+    this.isEditing = false;
+    this.profileData = { ...this.editedProfileData };
+  }
+
+  onCancel() {
+    this.isEditing = false;
+    this.editedProfileData = { ...this.profileData };
+  }
+
+  onFileSelected(event: any) {
     const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        this.profilePicUrl = reader.result as string;
-        this.profileForm.patchValue({ profilePic: this.profilePicUrl });
-      };
-      reader.readAsDataURL(file);
-    }
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.profileImage = reader.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  
+
+  logOut() {
+    this.authService.logout();
+    this.dialog.closeAll();
+    this.router.navigate(['/']);
   }
 }

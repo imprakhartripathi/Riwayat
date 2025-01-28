@@ -69,11 +69,29 @@ export class AuthenticatorComponent {
           this.authService.login(guestUser); // Store guest user
           alert('Welcome, Guest User');
           this.router.navigate(['/user']);
+        } else if (username === 'planner' && password === 'planner') { 
+            const guestPlanner = {
+              name: 'Guest Planner',
+              username: 'planner',
+              email: 'Not Available',
+              phone: 'Not Available',
+            };
+            this.authService.login(guestPlanner); // Store guest user
+            alert('Welcome, Guest Planner');
+            this.router.navigate(['/planner']);
         } else {
           alert('Invalid credentials');
         }
       } else {
-        alert('Please fill out all fields correctly');
+        alert('Please fill out all fields correctly');const guestUser = {
+          name: 'Guest User',
+          username: 'guestuser',
+          email: 'Not Available',
+          phone: 'Not Available',
+        };
+        this.authService.login(guestUser); // Store guest user
+        alert('Welcome, Guest User');
+        this.router.navigate(['/user']);
       }
     }
 
