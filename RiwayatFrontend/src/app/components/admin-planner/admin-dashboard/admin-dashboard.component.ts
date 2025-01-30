@@ -19,12 +19,14 @@ export class AdminDashboardComponent {
   constructor(private router: Router, public dialog: MatDialog) { }
 
   goToAdminProfile() {
-    this.dialog.open(AdminProfileComponent, {
-      width: '1000px', // Set the width of the dialog
-      height: 'auto', // Set the height of the dialog
-      panelClass: 'custom-dialog-container', // Apply a custom CSS class
-      data: {}, // Pass any data you want to share with the component
-    });
+    // this.dialog.open(AdminProfileComponent, {
+    //   width: '1000px', // Set the width of the dialog
+    //   height: 'auto', // Set the height of the dialog
+    //   panelClass: 'custom-dialog-container', // Apply a custom CSS class
+    //   data: {}, // Pass any data you want to share with the component
+    // });
+
+    this.router.navigate(['/adminprofile'])
   }
 
   openAddEventDialog() {
