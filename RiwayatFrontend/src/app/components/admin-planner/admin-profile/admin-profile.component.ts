@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { AuthService } from '../../../services/auth/auth.service';
 import { PlannerJsonService } from '../../../services/planner-json/planner-json.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-admin-profile',
@@ -23,7 +24,8 @@ export class AdminProfileComponent implements OnInit {
     private router: Router,
     public dialog: MatDialog,
     private authService: AuthService,
-    private pjs: PlannerJsonService
+    private pjs: PlannerJsonService,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
@@ -68,6 +70,10 @@ export class AdminProfileComponent implements OnInit {
 
   onEdit() {
     this.isEditing = true;
+  }
+
+  goBack() {
+    this.location.back();
   }
 
   onSave() {

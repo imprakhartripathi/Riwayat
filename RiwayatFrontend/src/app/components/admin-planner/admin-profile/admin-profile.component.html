@@ -1,4 +1,7 @@
 <div class="profile-container mat-elevation-z4">
+  <div class="parent">
+    <button mat-icon-button matTooltip="Go Back" (click)="goBack()"><mat-icon>arrow_left</mat-icon></button>
+  </div>
   <div class="profile-header">
     <div class="profile-image-container">
       <img [src]="profileImage" alt="Profile Image" class="profile-image" />
@@ -64,42 +67,54 @@
 
       <div class="prof-det">
         <mat-card class="spinner-card">
-          <h2 style="margin-left: 15px; margin-top: 5px">Stats</h2>
+          <h2 style="margin-left: 15px; margin-top: 5px">
+            Stats & Other Details
+          </h2>
           <mat-card-content>
-            <div class="spinner-container">
-              <label for="ocp" matTooltip="Order Completion Percentage"
-                >OCP</label
-              >
-              <mat-progress-spinner
-                id="ocp"
-                mode="determinate"
-                [diameter]="100"
-                [value]="plannerOCP"
-              >
-              </mat-progress-spinner>
-              <div class="spinner-text">{{ plannerOCP }}%</div>
-            </div>
+            <div class="spinner-parent">
+              <div class="spinner-container">
+                <label for="ocp" matTooltip="Order Completion Percentage"
+                  >OCP</label
+                >
+                <mat-progress-spinner
+                  id="ocp"
+                  mode="determinate"
+                  [diameter]="100"
+                  [value]="plannerOCP"
+                >
+                </mat-progress-spinner>
+                <div class="spinner-text">{{ plannerOCP }}%</div>
+              </div>
 
-            <div class="spinner-container">
-              <label for="rating">Rating</label>
-              <mat-progress-spinner
-                class="example-margin"
-                id="rating"
-                mode="determinate"
-                [diameter]="100"
-                [value]="plannerRating"
-              >
-              </mat-progress-spinner>
-              <div class="spinner-text">{{ editedProfileData.rating }}/5</div>
+              <div class="spinner-container">
+                <label for="rating">Rating</label>
+                <mat-progress-spinner
+                  class="example-margin"
+                  id="rating"
+                  mode="determinate"
+                  [diameter]="100"
+                  [value]="plannerRating"
+                >
+                </mat-progress-spinner>
+                <div class="spinner-text">{{ editedProfileData.rating }}/5</div>
+              </div>
             </div>
 
             <div class="form-fields">
-              <mat-form-field appearance="outline" style="margin-top: 40px">
+              <mat-form-field appearance="outline">
                 <mat-label>Fare</mat-label>
                 <input
                   matInput
                   [disabled]="!isEditing"
                   [(ngModel)]="editedProfileData.plannerFare"
+                />
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Specialty</mat-label>
+                <input
+                  matInput
+                  [disabled]="!isEditing"
+                  [(ngModel)]="editedProfileData.specialty"
                 />
               </mat-form-field>
             </div>

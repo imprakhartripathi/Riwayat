@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-
+import { Location } from '@angular/common';
 import { AdminEventCreatorComponent } from '../admin-event-creator/admin-event-creator.component';
 import { AdminNotificationComponent } from '../admin-notification/admin-notification.component';
 import { AdminProfileComponent } from '../admin-profile/admin-profile.component';
@@ -16,7 +16,7 @@ export class AdminDashboardComponent {
   notificationBadge=3;
   cartBadge = 2;
 
-  constructor(private router: Router, public dialog: MatDialog) { }
+  constructor(private router: Router, public dialog: MatDialog, private location: Location) { }
 
   goToAdminProfile() {
     // this.dialog.open(AdminProfileComponent, {
@@ -28,6 +28,8 @@ export class AdminDashboardComponent {
 
     this.router.navigate(['/adminprofile'])
   }
+
+  
 
   openAddEventDialog() {
     this.dialog.open(AdminEventCreatorComponent,{

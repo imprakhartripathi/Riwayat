@@ -36,10 +36,14 @@
 }
 
 .edit-image-button {
-  position: absolute;
+  position: relative;
   bottom: 0;
   right: 0;
   transform: translate(25%, 25%);
+
+  @media (max-width: 768px) {
+    position: absolute;
+  }
 }
 
 .profile-actions {
@@ -95,17 +99,33 @@ button[mat-raised-button] {
 }
 .spinner-card {
   width: auto;
+  padding: 10px;
+  border: 1px solid black;
   mat-card-content {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 30px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;;
+    }
   }
 }
 
 .spinner-container {
   position: relative;
   display: inline-block;
+  label{
+    text-align: center;
+  }
+}
+
+.spinner-parent {
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
 }
 
 .spinner-text {
@@ -115,4 +135,31 @@ button[mat-raised-button] {
   transform: translate(-50%, -50%);
   font-size: 16px;
   font-weight: bold;
+}
+.form-fields {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.parent {
+    mat-icon{
+        scale: 1.75;
+    }
+
+    button{
+        color: black;
+        transition: 0.3s;
+
+        &:disabled {
+            color: grey;
+        }
+
+        &:hover {
+            color: #c6a05c;
+            scale: 2;
+            transition: 0.3s;
+        }
+    }
 }
