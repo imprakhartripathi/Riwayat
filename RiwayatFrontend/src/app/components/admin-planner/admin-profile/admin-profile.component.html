@@ -22,22 +22,90 @@
 
   <div class="profile-details">
     <h2>{{ profileData.name }}</h2>
-    <p *ngIf="!isEditing">
-      <strong>User ID:</strong> {{ profileData.username }}
-    </p>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Username</mat-label>
+      <input
+        matInput
+        [disabled]="!isEditing"
+        [(ngModel)]="editedProfileData.username"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Bio</mat-label>
+      <input
+        matInput
+        [disabled]="!isEditing"
+        [(ngModel)]="editedProfileData.bio"
+      />
+    </mat-form-field>
 
     <div class="profile-info">
-      <mat-form-field appearance="outline" *ngIf="isEditing">
+      <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
-        <input matInput [(ngModel)]="editedProfileData.email" />
+        <input
+          matInput
+          [disabled]="!isEditing"
+          [(ngModel)]="editedProfileData.email"
+        />
       </mat-form-field>
-      <p *ngIf="!isEditing"><strong>Email:</strong> {{ profileData.email }}</p>
 
-      <mat-form-field appearance="outline" *ngIf="isEditing">
+      <mat-form-field appearance="outline" style="margin-bottom: 15px">
         <mat-label>Phone</mat-label>
-        <input matInput [(ngModel)]="editedProfileData.phone" />
+        <input
+          matInput
+          [disabled]="!isEditing"
+          [(ngModel)]="editedProfileData.phone"
+        />
       </mat-form-field>
-      <p *ngIf="!isEditing"><strong>Phone:</strong> {{ profileData.phone }}</p>
+
+      <mat-divider></mat-divider>
+
+      <div class="prof-det">
+        <mat-card class="spinner-card">
+          <h2 style="margin-left: 15px; margin-top: 5px">Stats</h2>
+          <mat-card-content>
+            <div class="spinner-container">
+              <label for="ocp" matTooltip="Order Completion Percentage"
+                >OCP</label
+              >
+              <mat-progress-spinner
+                id="ocp"
+                mode="determinate"
+                [diameter]="100"
+                [value]="plannerOCP"
+              >
+              </mat-progress-spinner>
+              <div class="spinner-text">{{ plannerOCP }}%</div>
+            </div>
+
+            <div class="spinner-container">
+              <label for="rating">Rating</label>
+              <mat-progress-spinner
+                class="example-margin"
+                id="rating"
+                mode="determinate"
+                [diameter]="100"
+                [value]="plannerRating"
+              >
+              </mat-progress-spinner>
+              <div class="spinner-text">{{ editedProfileData.rating }}/5</div>
+            </div>
+
+            <div class="form-fields">
+              <mat-form-field appearance="outline" style="margin-top: 40px">
+                <mat-label>Fare</mat-label>
+                <input
+                  matInput
+                  [disabled]="!isEditing"
+                  [(ngModel)]="editedProfileData.plannerFare"
+                />
+              </mat-form-field>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
     </div>
   </div>
 

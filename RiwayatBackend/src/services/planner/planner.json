@@ -1,6 +1,12 @@
 [
   {
     "name": "Harvey Specter",
+    "username": "harveyspecter",
+    "password": "mikeismyboy",
+    "phone": "9876543210",
+    "email": "harveyspecter@riwayatservices.in",
+    "orderCompletionPercentage": 89,
+    "rating": 4.7,
     "bio": "Hot-Shot Lawyer who likes to plan events nowadays, best for Law-related Events",
     "specialty": "Corporate Events",
     "experience": 50,
@@ -36,6 +42,12 @@
   },
   {
     "name": "Dr. House",
+    "username": "houseofgreg",
+    "password": "wilsoniscrazy",
+    "phone": "6969696969",
+    "email": "houseofgreg@riwayatserveces.in",
+    "orderCompletionPercentage": 90,
+    "rating": 4.5,
     "bio": "Crazy but Genius Doctor, Side Musician, Faked his Death for his friend, best suited for Parties and Fun Events",
     "specialty": "Parties & Birthdays",
     "experience": 30,
@@ -71,6 +83,12 @@
   },
   {
     "name": "Donna",
+    "username": "imdonna",
+    "password": "icandoanything",
+    "phone": "1234567890",
+    "email": "imdonna@riwayatservices.in",
+    "orderCompletionPercentage": 100,
+    "rating": 5,
     "bio": "Amazing and Confident, can do Anything because She is Donna!!",
     "specialty": "Creative Events, Themed Parties",
     "experience": 40,

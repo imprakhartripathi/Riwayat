@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DevService } from '../services/dev-dervice/dev-service.service';
+import { PlannerJsonService } from '../services/planner-json/planner-json.service';
 import { AuthService } from '../services/auth/auth.service'; // Import AuthService
 import { HttpClient } from '@angular/common/http';
 
@@ -17,6 +18,7 @@ export class AuthenticatorComponent {
   authForm: FormGroup;
   // newAuthForm: FormGroup;
   teamMembers: any[] = [];
+  planners: any[] = [];
 
   constructor(
     private router: Router,
@@ -24,7 +26,8 @@ export class AuthenticatorComponent {
     private fb: FormBuilder,
     private devService: DevService,
     private authService: AuthService, // Inject AuthService
-    private http: HttpClient
+    private http: HttpClient,
+    private pjs: PlannerJsonService,
   ) {
     this.authForm = this.fb.group({
       username: ['', Validators.required],
@@ -42,6 +45,9 @@ export class AuthenticatorComponent {
     this.devService.getTeamMembers().subscribe((data) => {
       this.teamMembers = data;
     });
+    this.pjs.getPlanners().subscribe((plannerdata) => {
+      this.planners = plannerdata;
+    })
   }
 
   onSubmit() {
@@ -54,11 +60,18 @@ export class AuthenticatorComponent {
           (member) =>
             member.username === username && member.password === password
         );
+        const planner = this.planners.find(
+          (planner) => planner.username === username && planner.password === password
+        )
 
         if (member) {
           alert(`Welcome, ${member.name}`);
           this.authService.login(member); // Store user in AuthService
           this.router.navigate(['/user']);
+        } else if (planner) {
+          alert(`Welcome, ${planner.name}`);
+          this.authService.login(planner); // Store user in AuthService
+          this.router.navigate(['/planner']);
         } else if (username === 'user' && password === 'user') {
           const guestUser = {
             name: 'Guest User',
