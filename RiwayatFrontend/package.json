@@ -6,7 +6,11 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+
+
+    "setup": "npm i && npm fund && ng add @angular/material"
+    
   },
   "private": true,
   "dependencies": {
