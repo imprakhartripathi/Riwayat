@@ -75,7 +75,11 @@ export class UserDashboardComponent implements OnInit {
       if (vendor){
         this.router.navigate(['/plannerprofile', vendor])
       }
-    }
+  }
+  
+  goToAIRecEngine() {
+    this.router.navigate(['/aibot'])
+  }
 
  
 

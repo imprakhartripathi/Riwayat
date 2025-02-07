@@ -114,3 +114,31 @@
       display: block;
     }
   }
+
+
+  .ai-card{
+    width: 100%;;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .ai-img {
+    position: relative; 
+    width: 100%;
+    height: 250px; /* Equal height for all images */
+    overflow: hidden;
+    margin-bottom: -20px;
+  }
+
+  .ai-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill; /* Ensure the image fits within its container */
+    border-radius: 5px; /* Consistent border radius for all */
+    display: block;
+  }

@@ -17,6 +17,7 @@ import { PaymentFailureComponent } from './components/user/payment-failure/payme
 // Admin/Planner Components
 import { AdminProfileComponent } from './components/admin-planner/admin-profile/admin-profile.component';
 import { AdminDashboardComponent } from './components/admin-planner/admin-dashboard/admin-dashboard.component';
+import { AiBotComponent } from './components/user/ai-bot/ai-bot.component';
 
 
 
@@ -45,6 +46,11 @@ const routes: Routes = [
     path: '',
     component: AuthenticatorComponent,
     data: { title: 'Riwayat - Authenticator' },
+  },
+  {
+    path: 'aibot',
+    component: AiBotComponent,
+    data: { title: 'Riwayat - AI Recommendation Engine' },
   },
   {
     path: 'user',

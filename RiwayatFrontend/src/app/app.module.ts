@@ -71,6 +71,7 @@ import { OrderDisplayComponent } from './components/user/order-display/order-dis
 import { DateFormatterPipe } from './pipes/date-formatter/date-formatter.pipe';
 import { PaymentFailureComponent } from './components/user/payment-failure/payment-failure.component';
 import { SecondaryNavbarComponent } from './components/secondary-navbar/secondary-navbar.component';
+import { AiBotComponent } from './components/user/ai-bot/ai-bot.component';
 
 
 
@@ -106,7 +107,8 @@ import { SecondaryNavbarComponent } from './components/secondary-navbar/secondar
     OrderDisplayComponent,
     PaymentFailureComponent,
     DateFormatterPipe,
-    SecondaryNavbarComponent
+    SecondaryNavbarComponent,
+    AiBotComponent
   ],
   imports: [
     BrowserModule,

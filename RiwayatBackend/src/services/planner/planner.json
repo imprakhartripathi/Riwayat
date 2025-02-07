@@ -37,6 +37,7 @@
         "image": "assets/customtier.png"
       }
     ],
+
     "image": "assets/harvey.jpg",
     "type": "planner"
   },
@@ -45,7 +46,7 @@
     "username": "houseofgreg",
     "password": "wilsoniscrazy",
     "phone": "6969696969",
-    "email": "houseofgreg@riwayatserveces.in",
+    "email": "houseofgreg@riwayatservices.in",
     "orderCompletionPercentage": 90,
     "rating": 4.5,
     "bio": "Crazy but Genius Doctor, Side Musician, Faked his Death for his friend, best suited for Parties and Fun Events",
@@ -78,6 +79,7 @@
         "image": "assets/customtier.png"
       }
     ],
+
     "image": "assets/dr-house2.jpg",
     "type": "planner"
   },
@@ -119,7 +121,218 @@
         "image": "assets/customtier.png"
       }
     ],
+
     "image": "assets/donna.jpg",
+    "type": "planner"
+  },
+  {
+    "name": "Rachel Green",
+    "username": "rachelgreen",
+    "password": "fashionista123",
+    "phone": "9874561230",
+    "email": "rachel@eventworld.com",
+    "orderCompletionPercentage": 95,
+    "rating": 4.8,
+    "bio": "Passionate about fashion and event decor, best suited for luxury weddings and fashion shows.",
+    "specialty": "Luxury Weddings, Fashion Events",
+    "experience": 35,
+    "plannerFare": "₹15,000",
+    "tiers": [
+      {
+        "name": "Basic",
+        "fare": "$1000",
+        "services": "Venue & Catering",
+        "image": "assets/basictier.png"
+      },
+      {
+        "name": "Standard",
+        "fare": "$1900",
+        "services": "Venue, Catering & Decorations",
+        "image": "assets/stdtier.png"
+      },
+      {
+        "name": "Premium",
+        "fare": "$2500",
+        "services": "Venue, Catering, Decorations, Entertainment & Waiter/Staff",
+        "image": "assets/premtier.png"
+      },
+      {
+        "name": "Custom",
+        "fare": "Depends on the Services",
+        "services": "Customize with any of the services",
+        "image": "assets/customtier.png"
+      }
+    ],
+
+    "image": "https://www.brit.co/media-library/jennifer-aniston-rachel-green-friends.jpg?id=35237611&width=1200&height=600&coordinates=0%2C224%2C0%2C1760",
+    "type": "planner"
+  },
+  {
+    "name": "Monica Geller",
+    "username": "monicageller",
+    "password": "cleanfreak1",
+    "phone": "9541236987",
+    "email": "monica@perfectevents.com",
+    "orderCompletionPercentage": 98,
+    "rating": 4.9,
+    "bio": "Perfectionist when it comes to organizing events. Best for weddings and fine dining events.",
+    "specialty": "Weddings, Fine Dining Events",
+    "experience": 45,
+    "plannerFare": "₹18,000",
+   "tiers": [
+      {
+        "name": "Basic",
+        "fare": "$1000",
+        "services": "Venue & Catering",
+        "image": "assets/basictier.png"
+      },
+      {
+        "name": "Standard",
+        "fare": "$1900",
+        "services": "Venue, Catering & Decorations",
+        "image": "assets/stdtier.png"
+      },
+      {
+        "name": "Premium",
+        "fare": "$2500",
+        "services": "Venue, Catering, Decorations, Entertainment & Waiter/Staff",
+        "image": "assets/premtier.png"
+      },
+      {
+        "name": "Custom",
+        "fare": "Depends on the Services",
+        "services": "Customize with any of the services",
+        "image": "assets/customtier.png"
+      }
+    ],
+
+    "image": "https://media.glamour.com/photos/6329ebe7756bfb7545c0c97f/master/w_1600%2Cc_limit/138426898",
+    "type": "planner"
+  },
+  {
+    "name": "Ted Mosby",
+    "username": "tedmosby",
+    "password": "architecture101",
+    "phone": "9123456789",
+    "email": "ted@dreamweddings.com",
+    "orderCompletionPercentage": 85,
+    "rating": 4.4,
+    "bio": "Architect and hopeless romantic, specializes in designing and executing dream weddings.",
+    "specialty": "Wedding Planning",
+    "experience": 25,
+    "plannerFare": "₹12,000",
+    "tiers": [
+      {
+        "name": "Basic",
+        "fare": "$1000",
+        "services": "Venue & Catering",
+        "image": "assets/basictier.png"
+      },
+      {
+        "name": "Standard",
+        "fare": "$1900",
+        "services": "Venue, Catering & Decorations",
+        "image": "assets/stdtier.png"
+      },
+      {
+        "name": "Premium",
+        "fare": "$2500",
+        "services": "Venue, Catering, Decorations, Entertainment & Waiter/Staff",
+        "image": "assets/premtier.png"
+      },
+      {
+        "name": "Custom",
+        "fare": "Depends on the Services",
+        "services": "Customize with any of the services",
+        "image": "assets/customtier.png"
+      }
+    ],
+
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRn6wsWYzHkbG5YFWwdiAQozt5pwl_Ig8t9A&s",
+    "type": "planner"
+  },
+  {
+    "name": "Barney Stinson",
+    "username": "legendary",
+    "password": "suitup",
+    "phone": "9870001234",
+    "email": "barney@partymasters.com",
+    "orderCompletionPercentage": 99,
+    "rating": 5,
+    "bio": "The ultimate party planner. Best for high-energy corporate parties and bachelor parties.",
+    "specialty": "Corporate Parties, Bachelor Parties",
+    "experience": 20,
+    "plannerFare": "₹20,000",
+    "tiers": [
+      {
+        "name": "Basic",
+        "fare": "$1000",
+        "services": "Venue & Catering",
+        "image": "assets/basictier.png"
+      },
+      {
+        "name": "Standard",
+        "fare": "$1900",
+        "services": "Venue, Catering & Decorations",
+        "image": "assets/stdtier.png"
+      },
+      {
+        "name": "Premium",
+        "fare": "$2500",
+        "services": "Venue, Catering, Decorations, Entertainment & Waiter/Staff",
+        "image": "assets/premtier.png"
+      },
+      {
+        "name": "Custom",
+        "fare": "Depends on the Services",
+        "services": "Customize with any of the services",
+        "image": "assets/customtier.png"
+      }
+    ],
+
+    "image": "https://www.tallengestore.com/cdn/shop/products/BarneyStinson-HowIMetYourMother-TVShowPoster_574d98ee-0abe-48af-af28-2e673197cd5b.jpg?v=1596545351",
+    "type": "planner"
+  },
+  {
+    "name": "Leslie Knope",
+    "username": "leslieknope",
+    "password": "parksandrec",
+    "phone": "9998887777",
+    "email": "leslie@communityevents.com",
+    "orderCompletionPercentage": 92,
+    "rating": 4.6,
+    "bio": "Government official turned event planner, specializes in community gatherings and town events.",
+    "specialty": "Community Events, Public Gatherings",
+    "experience": 38,
+    "plannerFare": "₹8,000",
+    "tiers": [
+      {
+        "name": "Basic",
+        "fare": "$1000",
+        "services": "Venue & Catering",
+        "image": "assets/basictier.png"
+      },
+      {
+        "name": "Standard",
+        "fare": "$1900",
+        "services": "Venue, Catering & Decorations",
+        "image": "assets/stdtier.png"
+      },
+      {
+        "name": "Premium",
+        "fare": "$2500",
+        "services": "Venue, Catering, Decorations, Entertainment & Waiter/Staff",
+        "image": "assets/premtier.png"
+      },
+      {
+        "name": "Custom",
+        "fare": "Depends on the Services",
+        "services": "Customize with any of the services",
+        "image": "assets/customtier.png"
+      }
+    ],
+
+    "image": "https://akns-images.eonline.com/eol_images/Entire_Site/2020330/rs_1024x759-200430102414-1024-Amy-Poehler-LT-043020-GettyImages-153839861.jpg?fit=around%7C776:576&output-quality=90&crop=776:576;center,top",
     "type": "planner"
   }
 ]

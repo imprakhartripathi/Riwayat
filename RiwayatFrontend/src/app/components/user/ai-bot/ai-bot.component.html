@@ -1,0 +1,25 @@
+<app-user-navbar></app-user-navbar>
+<app-secondary-navbar></app-secondary-navbar>
+
+<div class="chatbot-container">
+  <div class="chat-window">
+    <h2>Event Planning Bot</h2>
+    <div class="chat-messages">
+      <div *ngFor="let message of messages" class="message" [ngClass]="message.sender">
+        <p>{{ message.text }}</p>
+      </div>
+    </div>
+
+    <form (submit)="sendMessage()">
+      <input
+        type="text"
+        [(ngModel)]="userInput"
+        placeholder="Type your response here..."
+        name="message"
+        required
+        autocomplete="off"
+      />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</div>
