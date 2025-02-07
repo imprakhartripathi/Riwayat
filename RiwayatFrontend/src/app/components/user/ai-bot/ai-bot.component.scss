@@ -7,14 +7,14 @@
   .chat-window {
     width: 90%;
     height: 500px;
-    background-color: #fff;
+    background-color: #202020;
     border-radius: 12px;
     border: 2px solid black;
     padding: 20px;
 
     h2 {
       text-align: center;
-      color: #4a4a4a;
+      color: #c6a05c;
     }
 
     .chat-messages {
@@ -24,7 +24,7 @@
       padding: 10px;
       margin-bottom: 10px;
       border-radius: 8px;
-      background-color: #202020;
+      background-color: #404040;
 
       .message {
         margin-bottom: 20px; /* Add space between messages */
